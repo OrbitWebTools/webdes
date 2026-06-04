@@ -4,35 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebDes | Intelligent WhatsApp Automation SaaS</title>
-    <!-- Premium Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css" />
+    
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body class="bg-slate-50/50 text-slate-900 selection:bg-emerald-100 selection:text-emerald-900 leading-normal antialiased antialiased overflow-x-hidden relative">
+  <body class="bg-slate-50/50 text-slate-900 selection:bg-emerald-100 selection:text-emerald-900 leading-normal antialiased overflow-x-hidden relative">
 
-    <!-- Ambient glowing backgrounds -->
     <div class="absolute top-[8%] left-[5%] w-[40vw] h-[40vw] max-w-[600px] bg-emerald-500/5 rounded-full blur-[130px] pointer-events-none z-0 ambient-glow-1"></div>
     <div class="absolute top-[38%] right-[5%] w-[45vw] h-[45vw] max-w-[700px] bg-emerald-400/3 rounded-full blur-[150px] pointer-events-none z-0 ambient-glow-2"></div>
     <div class="absolute bottom-[10%] left-[8%] w-[38vw] h-[38vw] max-w-[550px] bg-[#25D366]/4 rounded-full blur-[120px] pointer-events-none z-0 ambient-glow-1"></div>
 
-    <!-- Background Grid overlay -->
     <div class="absolute inset-0 grid-pattern opacity-95 pointer-events-none z-0"></div>
 
-    <!-- Interactive Wandering Animal Overlay Container -->
     <div id="wandering-container" class="absolute inset-0 overflow-hidden pointer-events-none z-40"></div>
 
-    <!-- ==========================================
-        1. PREMIUM NAVIGATION HEADER
-        ========================================== -->
     <header class="sticky top-0 bg-white/60 backdrop-blur-xl border-b border-slate-200/60 z-30 shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
-      <!-- Dynamic active connection line -->
       <div id="top-connection-bar" class="h-1 bg-[#25D366] w-full transition-all duration-500 shadow-[0_2px_10px_rgba(37,211,102,0.4)]"></div>
       
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        <!-- Logo Brand -->
         <a href="#" class="flex items-center gap-3 group">
           <div class="w-11 h-11 bg-slate-950 rounded-xl flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.15)] border border-emerald-500/20 transition-transform duration-300 group-hover:scale-105">
             <span class="font-display font-extrabold text-[#25D366] text-xl">W</span>
@@ -44,7 +36,6 @@
           </div>
         </a>
 
-        <!-- Desktop Navigation Items -->
         <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-wider font-bold text-slate-500">
           <a href="#simulator" class="hover:text-slate-950 transition-colors">Sandbox Workspace</a>
           <a href="#metrics" class="hover:text-slate-950 transition-colors">Analytics</a>
@@ -53,7 +44,6 @@
           
           <div class="h-4 w-[1px] bg-slate-200"></div>
 
-          <!-- Network Active Signal -->
           <div class="flex items-center gap-2 bg-[#dcf8c6]/30 px-3 py-1.5 rounded-full text-[9px] text-slate-800 font-mono border border-emerald-400/20 uppercase font-black shadow-inner">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
@@ -63,7 +53,6 @@
           </div>
         </nav>
 
-        <!-- Main Header Action CTA -->
         <div class="flex items-center gap-3">
           <a href="#pricing" class="bg-slate-950 text-white rounded-xl px-5 py-2.5 text-xs font-extrabold hover:bg-slate-800 transition-all border border-slate-800 shadow-[0_4px_14px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_20px_rgba(37,211,102,0.15)] flex items-center gap-2 cursor-pointer">
             <span>Get Sandbox</span>
@@ -75,11 +64,7 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 relative z-10">
       
-      <!-- ==========================================
-          2. LANDING HERO SECTION
-          ========================================== -->
       <section class="max-w-4xl mx-auto text-center mb-16 relative">
-        <!-- System Status Ribbon -->
         <div class="inline-flex items-center gap-2.5 bg-[#dcf8c6]/20 border border-[#25D366]/20 text-slate-800 px-5 py-2 rounded-full text-xs font-mono tracking-wide shadow-[0_4px_15px_rgba(37,211,102,0.04)] mb-8">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#25D366] animate-pulse"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
           <span class="font-extrabold text-[10px] uppercase text-slate-900 tracking-wider">Webhook Router v2.8</span>
@@ -98,7 +83,6 @@
           Eliminate digital friction. Dispatch personalized broadcast notification arrays, bind rules in real-time, and route user flows into payment loops. Fully cloud-native.
         </p>
 
-        <!-- Hero CTAs -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button onclick="triggerLeadModal('Infinite Scale', 12500)" class="w-full sm:w-auto bg-[#25D366] text-white font-extrabold text-xs tracking-wide uppercase rounded-xl px-8 py-4 hover:bg-[#1ebd50] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 cursor-pointer">
             <span>Deploy Active Campaign</span>
@@ -111,16 +95,11 @@
         </div>
       </section>
 
-      <!-- ==========================================
-          3. INTERACTIVE SIMULATION SANDBOX
-          ========================================== -->
       <section id="simulator" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-12 mb-28">
         
-        <!-- LEFT: Interactive Workspace Rules Controller -->
         <div class="lg:col-span-5 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(37,211,102,0.06)] transition-all duration-500 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group">
           <div class="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-[#25D366]/10 to-transparent rounded-bl-full pointer-events-none"></div>
           
-          <!-- Workspace Header -->
           <div class="relative z-10">
             <div class="flex items-center justify-between border-b border-slate-100 pb-5 mb-5">
               <div class="flex items-center gap-3">
@@ -139,7 +118,6 @@
               </div>
             </div>
 
-            <!-- Tab Switcher -->
             <div class="grid grid-cols-3 gap-1.5 p-1 bg-slate-100 rounded-2xl mb-6 text-xs font-bold border border-slate-200/40">
               <button id="tab-rules" class="py-2.5 px-1 rounded-xl transition-all duration-300 cursor-pointer bg-white text-slate-950 shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-slate-200/30">
                 AutoBot Rules
@@ -152,21 +130,17 @@
               </button>
             </div>
 
-            <!-- TAB 1: AutoBot Rules Config Panel -->
             <div id="panel-rules" class="space-y-4">
               <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono text-left">Select Response Rule Tree</h3>
               <div class="space-y-2.5" id="rules-list-container">
-                <!-- Dynamically populated via JS -->
-              </div>
+                </div>
 
-              <!-- Custom Text Override area -->
               <div class="mt-6 pt-5 border-t border-slate-100 text-left">
                 <label class="text-[10px] font-bold uppercase text-slate-400 tracking-wider font-mono block mb-2">Configure Bot Custom Response Override</label>
                 <textarea id="custom-bot-reply" placeholder="Override standard rule string dynamically..." class="w-full h-18 text-xs p-3.5 border border-slate-200 rounded-xl focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/5 bg-slate-50/50 focus:bg-white resize-none font-mono transition-all"></textarea>
               </div>
             </div>
 
-            <!-- TAB 2: Campaigns Panel (Hidden by default) -->
             <div id="panel-broadcast" class="space-y-4 hidden text-left">
               <div>
                 <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 font-mono">High-Speed Broadcast Suite</h3>
@@ -212,7 +186,6 @@
               </button>
             </div>
 
-            <!-- TAB 3: Webhook API Panel (Hidden by default) -->
             <div id="panel-integrations" class="space-y-4 hidden text-left">
               <div>
                 <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 font-mono">Secure API & Webhooks Integration</h3>
@@ -251,7 +224,6 @@
             </div>
           </div>
 
-          <!-- Simulated Live Ticker Feed at Bottom -->
           <div class="mt-8 border-t border-slate-200/60 pt-5">
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-2">
@@ -265,25 +237,19 @@
             </div>
             
             <div id="live-feed-ticker" class="space-y-1.5 text-[11px] font-mono max-h-[120px] overflow-y-auto pr-1">
-              <!-- Dynamically populated ticker lines -->
-            </div>
+              </div>
           </div>
         </div>
 
-        <!-- RIGHT: Interactive Sandbox visual layers (Phone Mockup + Terminal Screen) -->
         <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
           
-          <!-- Smartphone Screen Simulator Frame -->
           <div id="phone-simulator" class="md:col-span-7 bg-[#0b141a] rounded-[40px] p-4 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] border-[8px] border-slate-800 flex flex-col min-h-[560px] relative overflow-hidden">
-            <!-- Notch Speaker Simulator -->
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5.5 bg-slate-800 rounded-b-2xl z-30 flex items-center justify-center gap-1.5 pb-1">
               <div class="w-10 h-1 bg-[#0b141a] rounded-full"></div>
               <div class="w-2 h-2 bg-[#0b141a] rounded-full"></div>
             </div>
 
-            <!-- Phone Screen content canvas -->
             <div class="flex-1 flex flex-col h-full bg-[#0b141a] pt-3.5 relative z-10 text-left">
-              <!-- Top Active Header Chat interface -->
               <div class="bg-[#202c33] px-3.5 py-3 rounded-2xl flex items-center justify-between mb-3 shadow-md">
                 <div class="flex items-center gap-2.5">
                   <div class="w-9 h-9 bg-emerald-500 rounded-full flex items-center justify-center shadow-md relative border border-emerald-400/20">
@@ -304,23 +270,19 @@
                 </div>
               </div>
 
-              <!-- Chat messages display container -->
               <div class="flex-1 overflow-y-auto px-2 space-y-4 flex flex-col justify-end pb-3 min-h-[320px] relative">
-                <!-- Backlight Glow dynamic -->
                 <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(37,211,102,0.04),transparent_65%)] pointer-events-none"></div>
 
                 <div class="self-center bg-[#182229]/90 border border-slate-800/80 text-[10px] text-slate-300 px-3.5 py-2.5 rounded-xl text-center max-w-[90%] leading-normal shadow z-10">
                   🔐 Cloud sandbox active. This simulation behaves exactly like a WebDes connected business number.
                 </div>
 
-                <!-- Live dynamically spawned bubbles go here -->
                 <div id="simulated-chat-bubbles" class="space-y-4 flex flex-col justify-end w-full">
                   <div class="self-center text-[11px] text-slate-500 p-4 text-center" id="chat-idle-placeholder">
                     Select a pattern node on the left workspace, then launch the simulation.
                   </div>
                 </div>
 
-                <!-- Typing dots spacer (visible when trigger typing simulation running) -->
                 <div id="sim-typing-bubble" class="self-start bg-[#202c33] text-white rounded-xl rounded-tl-none px-4 py-3.5 text-xs max-w-[85%] shadow-md z-10 hidden">
                   <div class="flex gap-1.5 items-center">
                     <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-bounce"></span>
@@ -330,7 +292,6 @@
                 </div>
               </div>
 
-              <!-- Input Bar Mimic Footer -->
               <div class="bg-[#202c33] p-1.5 rounded-2xl flex items-center justify-between gap-2 border border-slate-800">
                 <input id="phone-input-selector" type="text" disabled placeholder="Select rule & tap play..." class="flex-1 bg-transparent px-3 text-xs text-white placeholder-slate-500 border-none outline-none disabled:cursor-not-allowed">
                 
@@ -346,7 +307,6 @@
             </div>
           </div>
 
-          <!-- Monospace System Debug Terminal Console -->
           <div class="md:col-span-5 bg-[#070b0e] rounded-[30px] p-6 border border-slate-800 shadow-2xl flex flex-col justify-between text-left min-h-[560px] relative overflow-hidden group">
             <div class="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#25D366]/40 to-transparent pointer-events-none"></div>
 
@@ -362,17 +322,14 @@
                 </div>
               </div>
 
-              <!-- Terminal Feed Container -->
               <div id="system-terminal-logs" class="space-y-2 mt-4 max-h-[350px] overflow-y-auto font-mono text-[10px] text-slate-400 leading-normal pr-1">
                 <span class="block text-emerald-500 font-bold">$ webdes --boot-service cloud-router</span>
                 <span class="block text-slate-500">⚙️ Injecting client environment variables...</span>
                 <span class="block text-slate-500">⚙️ Live API parameters validated from config.js</span>
                 <span class="block text-emerald-600 font-bold">✓ System booted successfully. Webhook pipeline synchronized.</span>
-                <!-- Custom logs will append here -->
-              </div>
+                </div>
             </div>
 
-            <!-- Server Metrics Widgets at Bottom of Console -->
             <div class="border-t border-slate-800 pt-4 space-y-2.5 relative z-10 font-mono text-[9px] uppercase tracking-wider text-slate-400">
               <div class="flex items-center justify-between">
                 <span>Latency Range</span>
@@ -394,9 +351,6 @@
         </div>
       </section>
 
-      <!-- ==========================================
-          4. ANALYTICS & STATS SECTION
-          ========================================== -->
       <section id="metrics" class="mt-20 mb-28">
         <div class="text-center mb-12 max-w-2xl mx-auto">
           <h2 class="font-display font-extrabold text-slate-950 text-3xl sm:text-4xl tracking-tight">System Conversion Metrics</h2>
@@ -406,7 +360,6 @@
         </div>
 
         <div class="bg-white/80 backdrop-blur-md border border-slate-200/80 rounded-[32px] p-6 sm:p-8 hover:shadow-[0_20px_50px_rgba(37,211,102,0.04)] transition-all duration-500">
-          <!-- Stats Cards Header Grid -->
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8 text-left">
             <div class="p-5 bg-slate-50/60 rounded-2xl border border-slate-200/50 hover:bg-slate-50 transition-all">
               <span class="text-[10px] uppercase font-mono text-slate-450 tracking-wider font-bold">Total Dispatched</span>
@@ -433,7 +386,6 @@
             </div>
           </div>
 
-          <!-- Dynamic SVG Chart visualizer matching standard design -->
           <div class="relative border border-slate-200/70 rounded-2xl bg-slate-50/50 p-5 h-72 flex flex-col justify-between overflow-hidden">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-3">
               <span class="text-[10.5px] font-extrabold text-slate-400 uppercase font-mono tracking-wider text-left">24-Hour Message Deliveries vs Latency Index</span>
@@ -447,7 +399,6 @@
               </div>
             </div>
 
-            <!-- Grid backdrop -->
             <div class="absolute inset-x-5 inset-y-16 border-b border-t border-dashed border-slate-200/80 pointer-events-none flex flex-col justify-between z-0">
               <div class="w-full h-[1px] border-b border-dashed border-slate-200/85"></div>
               <div class="w-full h-[1px] border-b border-dashed border-slate-200/85"></div>
@@ -462,23 +413,18 @@
                   </linearGradient>
                 </defs>
 
-                <!-- Glow area overlay representing metrics peaks -->
                 <path d="M 0 85 Q 15 45, 30 65 T 60 20 T 85 5 T 100 0 L 100 100 L 0 100 Z" fill="url(#chartGlow)" />
 
-                <!-- Solid curve representing traffic deliveries -->
                 <path d="M 0 85 Q 15 45, 30 65 T 60 20 T 85 5 T 100 0" fill="none" stroke="#25D366" stroke-width="3" />
 
-                <!-- Critical Checkpoints -->
                 <circle cx="38" cy="48" r="3.5" fill="#ffffff" stroke="#25D366" stroke-width="2.5" class="cursor-pointer" />
                 <circle cx="70" cy="18" r="3.5" fill="#ffffff" stroke="#25D366" stroke-width="2.5" class="cursor-pointer" />
                 <circle cx="100" cy="0" r="4" fill="#25D366" class="animate-pulse" />
 
-                <!-- Secondary dashed loop path representing low routing latency -->
                 <path d="M 0 20 L 20 22 L 40 18 L 60 21 L 80 17 L 100 24" fill="none" stroke="#94a3b8" stroke-dasharray="4 3" stroke-width="1.5" />
               </svg>
             </div>
 
-            <!-- X Axis legends -->
             <div class="flex justify-between font-mono text-[9px] text-slate-400 mt-2.5 border-t border-slate-200/80 pt-2 z-10">
               <span>00:00 UTC</span>
               <span>06:00 UTC</span>
@@ -490,9 +436,6 @@
         </div>
       </section>
 
-      <!-- ==========================================
-          5. ENTERPRISE PRICING PLAN CARDS
-          ========================================== -->
       <section id="pricing" class="mt-28 mb-28">
         <div class="text-center mb-12 max-w-2xl mx-auto">
           <h2 class="font-display font-black text-slate-950 text-3xl sm:text-5xl tracking-tight">Simple Pricing Built For Success</h2>
@@ -503,7 +446,6 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           
-          <!-- Tier 1: Lite / Professional Growth -->
           <div class="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-[32px] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(37,211,102,0.05)] transition-all duration-500 relative flex flex-col justify-between text-left group overflow-hidden">
             <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-emerald-500/5 to-transparent rounded-bl-full pointer-events-none"></div>
             
@@ -517,7 +459,6 @@
                 <span class="text-xs text-slate-500 font-mono">/ Month (approx. $49)</span>
               </div>
 
-              <!-- Perks -->
               <ul class="space-y-4 text-xs text-slate-600 mt-8 mb-8 border-t border-slate-100 pt-6">
                 <li class="flex items-center gap-2.5">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-[#25D366] flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
@@ -545,7 +486,6 @@
             </div>
           </div>
 
-          <!-- Tier 2: Premium / Infinite scale -->
           <div class="bg-white border-2 border-[#25D366] rounded-[32px] p-8 shadow-[0_20px_50px_rgba(37,211,102,0.08)] hover:shadow-[0_20px_50px_rgba(37,211,102,0.12)] transition-all duration-500 relative flex flex-col justify-between text-left group overflow-hidden">
             <div class="absolute top-0 right-10 -translate-y-1/2 bg-[#25D366] text-black text-[10px] uppercase font-mono font-black tracking-widest px-4 py-1 rounded-full z-20">
               Elite Choice
@@ -562,7 +502,6 @@
                 <span class="text-xs text-slate-500 font-mono">/ Month (approx. $149)</span>
               </div>
 
-              <!-- Perks -->
               <ul class="space-y-4 text-xs text-slate-600 mt-8 mb-8 border-t border-slate-100 pt-6">
                 <li class="flex items-center gap-2.5">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-[#25D366] flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
@@ -597,9 +536,6 @@
         </div>
       </section>
 
-      <!-- ==========================================
-          6. PROFESSIONAL FAQ ACCORDION
-          ========================================== -->
       <section id="faq" class="max-w-4xl mx-auto mt-28 mb-16">
         <div class="text-center mb-12">
           <h2 class="font-display font-black text-slate-950 text-3xl tracking-tight">Frictionless Automation FAQ</h2>
@@ -609,7 +545,6 @@
         </div>
 
         <div class="space-y-4">
-          <!-- Accordion 1 -->
           <div class="bg-white/80 border border-slate-200/60 rounded-2xl p-5 hover:border-emerald-500/20 transition-all">
             <button class="w-full flex justify-between items-center text-left font-bold text-slate-800 text-sm focus:outline-none" onclick="toggleFaq(this)">
               <span>How does the WebDes AutoBot rule matching engine operate?</span>
@@ -622,7 +557,6 @@
             </div>
           </div>
 
-          <!-- Accordion 2 -->
           <div class="bg-white/80 border border-slate-200/60 rounded-2xl p-5 hover:border-emerald-500/20 transition-all">
             <button class="w-full flex justify-between items-center text-left font-bold text-slate-800 text-sm focus:outline-none" onclick="toggleFaq(this)">
               <span>Can I customize the automated message output after activation?</span>
@@ -635,7 +569,6 @@
             </div>
           </div>
 
-          <!-- Accordion 3 -->
           <div class="bg-white/80 border border-slate-200/60 rounded-2xl p-5 hover:border-emerald-500/20 transition-all">
             <button class="w-full flex justify-between items-center text-left font-bold text-slate-800 text-sm focus:outline-none" onclick="toggleFaq(this)">
               <span>What is the purpose of the Custom Webhook URL field?</span>
@@ -652,12 +585,8 @@
 
     </main>
 
-    <!-- ==========================================
-        7. SAAS PROFESSIONAL FOOTER
-        ========================================== -->
     <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-16 px-4 relative z-20">
       <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-        <!-- Logo and details -->
         <div class="md:col-span-5 text-left space-y-4">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-slate-950 rounded-xl flex items-center justify-center border border-emerald-500/20">
@@ -671,7 +600,6 @@
           </p>
         </div>
 
-        <!-- Dynamic contacts pulled from CONFIG -->
         <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
           <div>
             <h4 class="text-xs font-bold font-mono uppercase tracking-wider text-slate-300 mb-3">Workspace Contact</h4>
@@ -713,12 +641,8 @@
     </footer>
 
 
-    <!-- ==========================================
-        8. SMART LEAD CAPTURE GLASS MODAL
-        ========================================== -->
     <div id="lead-capture-modal" class="fixed inset-0 bg-slate-950/40 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
       <div class="glass-modal w-full max-w-md rounded-3xl p-6 sm:p-8 relative scale-95 transition-all duration-300 text-left">
-        <!-- Close CTA -->
         <button onclick="closeLeadModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-xl transition-all cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
@@ -750,7 +674,6 @@
               <input type="email" id="lead-email" required placeholder="e.g. business@gmail.com" class="w-full text-xs p-3.5 border border-slate-200 rounded-xl focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/5 bg-slate-50/50 focus:bg-white transition-all">
             </div>
 
-            <!-- Loader status visual -->
             <div id="lead-sync-status" class="hidden text-center text-xs font-mono py-2 text-emerald-600 font-bold bg-[#dcf8c6]/20 rounded-xl border border-emerald-400/20">
               Syncing webhook payload serverless array...
             </div>
@@ -765,18 +688,13 @@
     </div>
 
 
-    <!-- ==========================================
-        9. DYNAMIC CHECKOUT / DESKTOP QR BLOCK
-        ========================================== -->
     <div id="checkout-modal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
       <div class="glass-modal w-full max-w-md rounded-3xl p-6 sm:p-8 relative scale-95 transition-all duration-300 text-left">
-        <!-- Close CTA -->
         <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-750 hover:bg-slate-100 rounded-xl transition-all cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
 
         <div class="space-y-5">
-          <!-- Header -->
           <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
             <div class="w-10 h-10 bg-slate-950 rounded-xl flex items-center justify-center border border-[#25D366]/20">
               <span class="font-display font-extrabold text-[#25D366] text-lg">W</span>
@@ -788,7 +706,6 @@
             </div>
           </div>
 
-          <!-- Checkout Flow Info visual -->
           <div class="space-y-4">
             <div class="bg-emerald-50 border border-emerald-200/50 p-4 rounded-2xl flex items-center gap-3">
               <div class="p-2 bg-[#25D366] text-white rounded-full">
@@ -800,17 +717,12 @@
               </div>
             </div>
 
-            <!-- Custom dynamic canvas QR scanning mockup -->
             <div class="flex flex-col items-center py-2 relative">
               <div class="relative w-48 h-48 bg-white border border-slate-200 p-3.5 rounded-2xl shadow-inner overflow-hidden flex items-center justify-center">
-                <!-- Glowing laser line -->
                 <div class="absolute inset-x-0 h-0.5 bg-[#25D366] shadow-[0_0_10px_#25D366] scan-line pointer-events-none"></div>
                 
-                <!-- Dynamic High-Fidelity checkout QR SVG element -->
                 <div id="dynamic-qr-container" class="w-full h-full flex items-center justify-center">
-                  <!-- Generated dynamic QR code vector fallback -->
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-full h-full">
-                    <!-- Standard QR structural squares -->
                     <rect x="0" y="0" width="30" height="30" fill="#111" />
                     <rect x="5" y="5" width="20" height="20" fill="#fff" />
                     <rect x="10" y="10" width="10" height="10" fill="#25D366" />
@@ -823,11 +735,9 @@
                     <rect x="5" y="75" width="20" height="20" fill="#fff" />
                     <rect x="10" y="80" width="10" height="10" fill="#075E54" />
 
-                    <!-- Middle logo backdrop -->
                     <rect x="35" y="35" width="30" height="30" rx="6" fill="#111" />
                     <circle cx="50" cy="50" r="10" fill="#25D366" />
                     
-                    <!-- Random matrix scan bits to feel authentic -->
                     <rect x="35" y="0" width="5" height="5" fill="#111" /><rect x="45" y="10" width="10" height="5" fill="#111" /><rect x="60" y="5" width="5" height="15" fill="#111" />
                     <rect x="35" y="20" width="15" height="5" fill="#111" /><rect x="55" y="25" width="10" height="5" fill="#25D366" />
                     <rect x="0" y="35" width="10" height="5" fill="#111" /><rect x="15" y="45" width="5" height="10" fill="#111" /><rect x="25" y="35" width="5" height="5" fill="#111" />
@@ -841,7 +751,6 @@
               <span id="amount-indicator-checkout" class="mt-3.5 text-xs font-black tracking-widest font-mono text-slate-800 bg-slate-100 px-4 py-1.5 rounded-full border border-slate-200">PAY ₹4,100</span>
             </div>
 
-            <!-- Steps -->
             <div class="space-y-2.5 text-[11px] text-slate-500 font-mono">
               <div class="flex items-start gap-2 text-left">
                 <span class="text-[#25D366] font-bold">1.</span>
@@ -857,7 +766,6 @@
               </div>
             </div>
 
-            <!-- Core parameters values -->
             <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 text-left font-mono text-[10.5px]">
               <div class="flex justify-between pb-1.5 border-b border-slate-900 mb-1.5">
                 <span class="text-slate-505">TARGET_UPI_VAL:</span>
@@ -873,8 +781,7 @@
       </div>
     </div>
 
-    <!-- External configurations import -->
-    <script src="/config.js"></script>
-    <script type="module" src="/script.js"></script>
+    <script src="./config.js"></script>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
