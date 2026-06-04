@@ -1,6 +1,0 @@
-{
-  "name": "WebDes WhatsApp Automation Tool",
-  "description": "Premium 100% cloud-based WhatsApp automation tool with automated message responses, broadcast campaigns, real-time tracking, lead capture form, and instant secure payment gateway integrations.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
