@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orbitwebtools.github.io/webdes/sitemap.xml
