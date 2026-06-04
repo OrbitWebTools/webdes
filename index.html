@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebDes | Intelligent WhatsApp Automation SaaS</title>
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="bg-slate-50/50 text-slate-900 selection:bg-emerald-100 selection:text-emerald-900 leading-normal antialiased antialiased overflow-x-hidden relative">
+
+    <!-- Ambient glowing backgrounds -->
+    <div class="absolute top-[8%] left-[5%] w-[40vw] h-[40vw] max-w-[600px] bg-emerald-500/5 rounded-full blur-[130px] pointer-events-none z-0 ambient-glow-1"></div>
+    <div class="absolute top-[38%] right-[5%] w-[45vw] h-[45vw] max-w-[700px] bg-emerald-400/3 rounded-full blur-[150px] pointer-events-none z-0 ambient-glow-2"></div>
+    <div class="absolute bottom-[10%] left-[8%] w-[38vw] h-[38vw] max-w-[550px] bg-[#25D366]/4 rounded-full blur-[120px] pointer-events-none z-0 ambient-glow-1"></div>
+
+    <!-- Background Grid overlay -->
+    <div class="absolute inset-0 grid-pattern opacity-95 pointer-events-none z-0"></div>
+
+    <!-- Interactive Wandering Animal Overlay Container -->
+    <div id="wandering-container" class="absolute inset-0 overflow-hidden pointer-events-none z-40"></div>
+
+    <!-- ==========================================
+        1. PREMIUM NAVIGATION HEADER
+        ========================================== -->
+    <header class="sticky top-0 bg-white/60 backdrop-blur-xl border-b border-slate-200/60 z-30 shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
+      <!-- Dynamic active connection line -->
+      <div id="top-connection-bar" class="h-1 bg-[#25D366] w-full transition-all duration-500 shadow-[0_2px_10px_rgba(37,211,102,0.4)]"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        <!-- Logo Brand -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 bg-slate-950 rounded-xl flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.15)] border border-emerald-500/20 transition-transform duration-300 group-hover:scale-105">
+            <span class="font-display font-extrabold text-[#25D366] text-xl">W</span>
+            <span class="font-display font-bold text-white text-md -ml-0.5">D</span>
+          </div>
+          <div class="text-left">
+            <span class="font-display font-extrabold text-lg tracking-tight text-slate-950 block">WebDes</span>
+            <span class="block text-[10px] text-emerald-600 font-mono tracking-widest font-bold uppercase -mt-1">INTELLIGENT SUITE</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-wider font-bold text-slate-500">
+          <a href="#simulator" class="hover:text-slate-950 transition-colors">Sandbox Workspace</a>
+          <a href="#metrics" class="hover:text-slate-950 transition-colors">Analytics</a>
+          <a href="#pricing" class="hover:text-slate-950 transition-colors">Elite Plans</a>
+          <a href="#faq" class="hover:text-slate-950 transition-colors">Insights</a>
+          
+          <div class="h-4 w-[1px] bg-slate-200"></div>
+
+          <!-- Network Active Signal -->
+          <div class="flex items-center gap-2 bg-[#dcf8c6]/30 px-3 py-1.5 rounded-full text-[9px] text-slate-800 font-mono border border-emerald-400/20 uppercase font-black shadow-inner">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]"></span>
+            </span>
+            <span>100% Cloud Synced</span>
+          </div>
+        </nav>
+
+        <!-- Main Header Action CTA -->
+        <div class="flex items-center gap-3">
+          <a href="#pricing" class="bg-slate-950 text-white rounded-xl px-5 py-2.5 text-xs font-extrabold hover:bg-slate-800 transition-all border border-slate-800 shadow-[0_4px_14px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_20px_rgba(37,211,102,0.15)] flex items-center gap-2 cursor-pointer">
+            <span>Get Sandbox</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-[#25D366]"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 relative z-10">
+      
+      <!-- ==========================================
+          2. LANDING HERO SECTION
+          ========================================== -->
+      <section class="max-w-4xl mx-auto text-center mb-16 relative">
+        <!-- System Status Ribbon -->
+        <div class="inline-flex items-center gap-2.5 bg-[#dcf8c6]/20 border border-[#25D366]/20 text-slate-800 px-5 py-2 rounded-full text-xs font-mono tracking-wide shadow-[0_4px_15px_rgba(37,211,102,0.04)] mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#25D366] animate-pulse"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          <span class="font-extrabold text-[10px] uppercase text-slate-900 tracking-wider">Webhook Router v2.8</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-200"></span>
+          <span class="text-slate-500 font-semibold text-[10.5px]">Zero-latency automation ready</span>
+        </div>
+
+        <h1 class="font-display font-black text-slate-950 text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-[0.95] mb-6">
+          Unrivaled Conversational <br class="hidden sm:inline" />
+          <span class="bg-gradient-to-r from-emerald-600 via-[#25D366] to-emerald-500 bg-clip-text text-transparent">
+            WhatsApp Automation
+          </span> Engine
+        </h1>
+        
+        <p class="text-slate-500 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+          Eliminate digital friction. Dispatch personalized broadcast notification arrays, bind rules in real-time, and route user flows into payment loops. Fully cloud-native.
+        </p>
+
+        <!-- Hero CTAs -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onclick="triggerLeadModal('Infinite Scale', 12500)" class="w-full sm:w-auto bg-[#25D366] text-white font-extrabold text-xs tracking-wide uppercase rounded-xl px-8 py-4 hover:bg-[#1ebd50] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 cursor-pointer">
+            <span>Deploy Active Campaign</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          
+          <a href="#simulator" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-800 font-extrabold text-xs tracking-wide uppercase border border-slate-200 rounded-xl px-8 py-4 shadow-sm transition-all flex items-center justify-center gap-2">
+            <span>Test Live Sandbox</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==========================================
+          3. INTERACTIVE SIMULATION SANDBOX
+          ========================================== -->
+      <section id="simulator" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-12 mb-28">
+        
+        <!-- LEFT: Interactive Workspace Rules Controller -->
+        <div class="lg:col-span-5 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(37,211,102,0.06)] transition-all duration-500 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-[#25D366]/10 to-transparent rounded-bl-full pointer-events-none"></div>
+          
+          <!-- Workspace Header -->
+          <div class="relative z-10">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-5 mb-5">
+              <div class="flex items-center gap-3">
+                <div class="p-2.5 bg-emerald-50 rounded-xl text-[#25D366] border border-emerald-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <div class="text-left">
+                  <h2 class="font-display font-extrabold text-slate-900 text-md">WebDes Workspace</h2>
+                  <p class="text-[9px] text-slate-400 font-mono tracking-wider font-extrabold">NODE_ENV: PROD CLOUD</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-1.5 bg-[#dcf8c6]/20 border border-emerald-500/10 px-3 py-1 rounded-full font-mono text-[10px] text-slate-700">
+                <span class="w-1.5 h-1.5 bg-[#25D366] rounded-full animate-pulse"></span>
+                <span class="font-bold">ACTIVE</span>
+              </div>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="grid grid-cols-3 gap-1.5 p-1 bg-slate-100 rounded-2xl mb-6 text-xs font-bold border border-slate-200/40">
+              <button id="tab-rules" class="py-2.5 px-1 rounded-xl transition-all duration-300 cursor-pointer bg-white text-slate-950 shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-slate-200/30">
+                AutoBot Rules
+              </button>
+              <button id="tab-broadcast" class="py-2.5 px-1 rounded-xl transition-all duration-300 cursor-pointer text-slate-500 hover:text-slate-800">
+                Campaigns
+              </button>
+              <button id="tab-integrations" class="py-2.5 px-1 rounded-xl transition-all duration-300 cursor-pointer text-slate-500 hover:text-slate-800">
+                Webhook API
+              </button>
+            </div>
+
+            <!-- TAB 1: AutoBot Rules Config Panel -->
+            <div id="panel-rules" class="space-y-4">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono text-left">Select Response Rule Tree</h3>
+              <div class="space-y-2.5" id="rules-list-container">
+                <!-- Dynamically populated via JS -->
+              </div>
+
+              <!-- Custom Text Override area -->
+              <div class="mt-6 pt-5 border-t border-slate-100 text-left">
+                <label class="text-[10px] font-bold uppercase text-slate-400 tracking-wider font-mono block mb-2">Configure Bot Custom Response Override</label>
+                <textarea id="custom-bot-reply" placeholder="Override standard rule string dynamically..." class="w-full h-18 text-xs p-3.5 border border-slate-200 rounded-xl focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/5 bg-slate-50/50 focus:bg-white resize-none font-mono transition-all"></textarea>
+              </div>
+            </div>
+
+            <!-- TAB 2: Campaigns Panel (Hidden by default) -->
+            <div id="panel-broadcast" class="space-y-4 hidden text-left">
+              <div>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 font-mono">High-Speed Broadcast Suite</h3>
+                <p class="text-[11px] text-slate-500 leading-normal">
+                  Sync subscriber lists directly in the dashboard. Dispatch highly personalized marketing campaigns with standard parametric variable structures.
+                </p>
+              </div>
+
+              <div class="bg-slate-50/50 border border-slate-200/50 rounded-2xl p-4 space-y-3 text-xs text-slate-700 font-mono">
+                <div class="flex justify-between items-center pb-2 border-b border-slate-200/40">
+                  <span class="text-slate-400">Target Segment</span>
+                  <span class="font-extrabold text-slate-800">Omni Broadcast Leads</span>
+                </div>
+                <div class="flex justify-between items-center pb-2 border-b border-slate-200/40">
+                  <span class="text-slate-400">Scheduled Dispatch Node</span>
+                  <span class="font-bold text-[#25D366] flex items-center gap-1.5">
+                    <span class="relative flex h-1.5 w-1.5">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#25D366]"></span>
+                    </span>
+                    Live Endpoint Status
+                  </span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-slate-400">System Speed Capacity</span>
+                  <span class="font-mono bg-white px-2.5 py-0.5 rounded-lg border border-slate-200 text-[#25D366] font-bold text-[10px]">MAX_60_FPS</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1.5 font-mono">
+                  <span class="text-slate-400">Broadcast Progress</span>
+                  <span id="broadcast-percentage" class="font-bold text-slate-800">0%</span>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full overflow-hidden border border-slate-200/50">
+                  <div id="broadcast-bar" class="h-full bg-gradient-to-r from-emerald-400 to-[#25D366] transition-all duration-300" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <button id="btn-trigger-broadcast" class="w-full py-3.5 rounded-xl bg-[#25D366] text-white text-xs font-bold hover:bg-[#1ebd50] tracking-wide uppercase shadow-md shadow-emerald-500/10 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                <span>Deploy Broadcast Campaign</span>
+              </button>
+            </div>
+
+            <!-- TAB 3: Webhook API Panel (Hidden by default) -->
+            <div id="panel-integrations" class="space-y-4 hidden text-left">
+              <div>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 font-mono">Secure API & Webhooks Integration</h3>
+                <p class="text-[11px] text-slate-500 leading-normal">
+                  Credentials and developer variables are compiled inside secure offline parameters, keeping external payloads gated.
+                </p>
+              </div>
+
+              <div class="text-[11px] text-slate-600 bg-slate-50/60 p-4 rounded-2xl border border-slate-200/50 font-mono space-y-2">
+                <div class="flex justify-between">
+                  <span class="text-slate-400 font-bold">WEBHOOK_URL_STATUS:</span>
+                  <span id="webhook-val-label" class="text-emerald-600 font-bold">STANDBY (DEFAULT)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400 font-bold">PAYFLOW_CRED:</span>
+                  <span id="upi-val-label" class="text-slate-700 font-semibold">LOADED ✓</span>
+                </div>
+              </div>
+
+              <div class="relative border border-slate-200/60 rounded-2xl p-4 bg-slate-950 text-slate-300">
+                <div class="flex items-center justify-between mb-2.5">
+                  <span class="text-[9px] font-bold text-slate-400 uppercase font-mono tracking-wider">Callback Event Payload</span>
+                  <span class="text-[8px] bg-slate-800 border border-slate-700 text-emerald-400 px-2 py-0.5 rounded-full uppercase font-mono">Synced</span>
+                </div>
+                <pre class="text-[10px] text-[#25D366] overflow-x-auto leading-normal font-mono max-h-32" id="webhook-code-block">
+{
+  "event": "message.received",
+  "client": "+91 62911-92742",
+  "params": {
+    "keyword": "pricing",
+    "lead_name": "SaaS Builder"
+  },
+  "timestamp": "1717507119"
+}</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simulated Live Ticker Feed at Bottom -->
+          <div class="mt-8 border-t border-slate-200/60 pt-5">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]"></span>
+                </span>
+                <span class="text-[10px] font-bold text-slate-400 uppercase font-mono tracking-widest block">Global Activity Watcher</span>
+              </div>
+              <span class="text-[9px] font-mono text-emerald-600 uppercase font-bold bg-[#dcf8c6]/30 px-2 py-0.5 rounded-full">Feed Sync Live</span>
+            </div>
+            
+            <div id="live-feed-ticker" class="space-y-1.5 text-[11px] font-mono max-h-[120px] overflow-y-auto pr-1">
+              <!-- Dynamically populated ticker lines -->
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Interactive Sandbox visual layers (Phone Mockup + Terminal Screen) -->
+        <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+          
+          <!-- Smartphone Screen Simulator Frame -->
+          <div id="phone-simulator" class="md:col-span-7 bg-[#0b141a] rounded-[40px] p-4 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] border-[8px] border-slate-800 flex flex-col min-h-[560px] relative overflow-hidden">
+            <!-- Notch Speaker Simulator -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5.5 bg-slate-800 rounded-b-2xl z-30 flex items-center justify-center gap-1.5 pb-1">
+              <div class="w-10 h-1 bg-[#0b141a] rounded-full"></div>
+              <div class="w-2 h-2 bg-[#0b141a] rounded-full"></div>
+            </div>
+
+            <!-- Phone Screen content canvas -->
+            <div class="flex-1 flex flex-col h-full bg-[#0b141a] pt-3.5 relative z-10 text-left">
+              <!-- Top Active Header Chat interface -->
+              <div class="bg-[#202c33] px-3.5 py-3 rounded-2xl flex items-center justify-between mb-3 shadow-md">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-9 h-9 bg-emerald-500 rounded-full flex items-center justify-center shadow-md relative border border-emerald-400/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="m15 13-3-3-3 3"/></svg>
+                    <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#25D366] border border-[#202c33] rounded-full animate-pulse"></span>
+                  </div>
+                  <div>
+                    <div class="text-white text-xs font-bold flex items-center gap-1">
+                      <span>WebDes AutoBot</span>
+                      <span class="bg-[#25D366]/10 text-[#25D366] border border-emerald-500/10 px-1 py-0.2 rounded text-[7px] uppercase font-black tracking-wide">Agent V2</span>
+                    </div>
+                    <span id="bot-status-subtext" class="text-[#8696a0] text-[9px] italic">online & matching...</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 bg-[#25D366] rounded-full animate-ping"></span>
+                  <span class="text-[8px] text-slate-300 font-mono font-bold tracking-wider uppercase">Sandbox</span>
+                </div>
+              </div>
+
+              <!-- Chat messages display container -->
+              <div class="flex-1 overflow-y-auto px-2 space-y-4 flex flex-col justify-end pb-3 min-h-[320px] relative">
+                <!-- Backlight Glow dynamic -->
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(37,211,102,0.04),transparent_65%)] pointer-events-none"></div>
+
+                <div class="self-center bg-[#182229]/90 border border-slate-800/80 text-[10px] text-slate-300 px-3.5 py-2.5 rounded-xl text-center max-w-[90%] leading-normal shadow z-10">
+                  🔐 Cloud sandbox active. This simulation behaves exactly like a WebDes connected business number.
+                </div>
+
+                <!-- Live dynamically spawned bubbles go here -->
+                <div id="simulated-chat-bubbles" class="space-y-4 flex flex-col justify-end w-full">
+                  <div class="self-center text-[11px] text-slate-500 p-4 text-center" id="chat-idle-placeholder">
+                    Select a pattern node on the left workspace, then launch the simulation.
+                  </div>
+                </div>
+
+                <!-- Typing dots spacer (visible when trigger typing simulation running) -->
+                <div id="sim-typing-bubble" class="self-start bg-[#202c33] text-white rounded-xl rounded-tl-none px-4 py-3.5 text-xs max-w-[85%] shadow-md z-10 hidden">
+                  <div class="flex gap-1.5 items-center">
+                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-bounce"></span>
+                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Input Bar Mimic Footer -->
+              <div class="bg-[#202c33] p-1.5 rounded-2xl flex items-center justify-between gap-2 border border-slate-800">
+                <input id="phone-input-selector" type="text" disabled placeholder="Select rule & tap play..." class="flex-1 bg-transparent px-3 text-xs text-white placeholder-slate-500 border-none outline-none disabled:cursor-not-allowed">
+                
+                <div class="flex items-center gap-1">
+                  <button id="btn-run-simulation" class="p-2.5 bg-[#25D366] text-black hover:bg-[#1ebd50] rounded-xl transition-all shadow-md cursor-pointer" title="Execute Sequence">
+                    <svg xmlns="http://www.w3.org/2050/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-slate-950"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                  <button id="btn-reset-simulation" class="p-2.5 bg-slate-800 hover:bg-slate-750 text-slate-400 rounded-xl transition-all border border-slate-700" title="Reset Sandbox messages">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Monospace System Debug Terminal Console -->
+          <div class="md:col-span-5 bg-[#070b0e] rounded-[30px] p-6 border border-slate-800 shadow-2xl flex flex-col justify-between text-left min-h-[560px] relative overflow-hidden group">
+            <div class="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#25D366]/40 to-transparent pointer-events-none"></div>
+
+            <div class="relative z-10 w-full">
+              <div class="border-b border-slate-800 pb-3.5 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-emerald-400 animate-pulse"><path d="M4 14h6v8H4zm10-6h6v14h-6zM4 2h6v8H4zm10-2h6v4h-6z"/></svg>
+                  <span class="text-[10px] font-bold text-slate-300 font-mono tracking-widest uppercase">System Console</span>
+                </div>
+                <div class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]"></span>
+                </div>
+              </div>
+
+              <!-- Terminal Feed Container -->
+              <div id="system-terminal-logs" class="space-y-2 mt-4 max-h-[350px] overflow-y-auto font-mono text-[10px] text-slate-400 leading-normal pr-1">
+                <span class="block text-emerald-500 font-bold">$ webdes --boot-service cloud-router</span>
+                <span class="block text-slate-500">⚙️ Injecting client environment variables...</span>
+                <span class="block text-slate-500">⚙️ Live API parameters validated from config.js</span>
+                <span class="block text-emerald-600 font-bold">✓ System booted successfully. Webhook pipeline synchronized.</span>
+                <!-- Custom logs will append here -->
+              </div>
+            </div>
+
+            <!-- Server Metrics Widgets at Bottom of Console -->
+            <div class="border-t border-slate-800 pt-4 space-y-2.5 relative z-10 font-mono text-[9px] uppercase tracking-wider text-slate-400">
+              <div class="flex items-center justify-between">
+                <span>Latency Range</span>
+                <span class="text-[#25D366] font-bold">12ms - 45ms Max</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>Sandbox Success Rate</span>
+                <span class="text-[#25D366] font-bold">99.98% SLA</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>Assigned Node Force</span>
+                <div class="flex items-center gap-1.5 text-white">
+                  <img src="https://picsum.photos/seed/tech/20/20" class="w-4 h-4 rounded-full border border-emerald-400 inline" referrerpolicy="no-referrer" alt="Active Node Worker">
+                  <span class="font-bold">Active Host</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+          4. ANALYTICS & STATS SECTION
+          ========================================== -->
+      <section id="metrics" class="mt-20 mb-28">
+        <div class="text-center mb-12 max-w-2xl mx-auto">
+          <h2 class="font-display font-extrabold text-slate-950 text-3xl sm:text-4xl tracking-tight">System Conversion Metrics</h2>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">
+            Real-time message traffic statistics and system delivery latency monitored across our 100% cloud-based digital workspace.
+          </p>
+        </div>
+
+        <div class="bg-white/80 backdrop-blur-md border border-slate-200/80 rounded-[32px] p-6 sm:p-8 hover:shadow-[0_20px_50px_rgba(37,211,102,0.04)] transition-all duration-500">
+          <!-- Stats Cards Header Grid -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8 text-left">
+            <div class="p-5 bg-slate-50/60 rounded-2xl border border-slate-200/50 hover:bg-slate-50 transition-all">
+              <span class="text-[10px] uppercase font-mono text-slate-450 tracking-wider font-bold">Total Dispatched</span>
+              <div class="text-3xl font-extrabold font-display text-slate-950 mt-1.5">421,908+</div>
+              <span class="text-[10px] text-emerald-600 font-bold font-mono mt-1 block">⚡ 100% Delivery</span>
+            </div>
+            
+            <div class="p-5 bg-slate-50/60 rounded-2xl border border-slate-200/50 hover:bg-slate-50 transition-all">
+              <span class="text-[10px] uppercase font-mono text-slate-450 tracking-wider font-bold">Average Open Ratio</span>
+              <div class="text-3xl font-extrabold font-display text-slate-950 mt-1.5">98.42%</div>
+              <span class="text-[10px] text-emerald-600 font-bold font-mono mt-1 block">⏱️ ~4.5x Email CTR</span>
+            </div>
+            
+            <div class="p-5 bg-[#dcf8c6]/15 rounded-2xl border border-[#25D366]/20 hover:bg-[#dcf8c6]/20 transition-all">
+              <span class="text-[10px] uppercase font-mono text-slate-450 tracking-wider font-bold">Est. Revenue Generated</span>
+              <div class="text-3xl font-extrabold font-display text-slate-950 mt-1.5">₹14.2M+</div>
+              <span class="text-[10px] text-emerald-700 font-bold font-mono mt-1 block">🌱 High Conversion ROI</span>
+            </div>
+            
+            <div class="p-5 bg-slate-50/60 rounded-2xl border border-slate-200/50 hover:bg-slate-50 transition-all">
+              <span class="text-[10px] uppercase font-mono text-slate-450 tracking-wider font-bold">Webhook Latency Index</span>
+              <div class="text-3xl font-extrabold font-display text-[#25D366] mt-1.5">0.02s</div>
+              <span class="text-[10px] text-slate-500 font-bold font-mono mt-1 block">🚀 Live Synchronization</span>
+            </div>
+          </div>
+
+          <!-- Dynamic SVG Chart visualizer matching standard design -->
+          <div class="relative border border-slate-200/70 rounded-2xl bg-slate-50/50 p-5 h-72 flex flex-col justify-between overflow-hidden">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-3">
+              <span class="text-[10.5px] font-extrabold text-slate-400 uppercase font-mono tracking-wider text-left">24-Hour Message Deliveries vs Latency Index</span>
+              <div class="flex gap-4 text-[10px] font-bold">
+                <span class="flex items-center gap-1.5 text-[#25D366]">
+                  <span class="w-2 h-2 bg-[#25D366] rounded-full"></span> Deliveries (Thousands)
+                </span>
+                <span class="flex items-center gap-1.5 text-slate-400">
+                  <span class="w-1.5 h-1.5 bg-slate-450 rounded-full"></span> Response Latency (ms)
+                </span>
+              </div>
+            </div>
+
+            <!-- Grid backdrop -->
+            <div class="absolute inset-x-5 inset-y-16 border-b border-t border-dashed border-slate-200/80 pointer-events-none flex flex-col justify-between z-0">
+              <div class="w-full h-[1px] border-b border-dashed border-slate-200/85"></div>
+              <div class="w-full h-[1px] border-b border-dashed border-slate-200/85"></div>
+            </div>
+
+            <div class="relative w-full h-40 mt-2 z-10">
+              <svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
+                <defs>
+                  <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#25D366" stop-opacity="0.25" />
+                    <stop offset="100%" stop-color="#25D366" stop-opacity="0.0" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Glow area overlay representing metrics peaks -->
+                <path d="M 0 85 Q 15 45, 30 65 T 60 20 T 85 5 T 100 0 L 100 100 L 0 100 Z" fill="url(#chartGlow)" />
+
+                <!-- Solid curve representing traffic deliveries -->
+                <path d="M 0 85 Q 15 45, 30 65 T 60 20 T 85 5 T 100 0" fill="none" stroke="#25D366" stroke-width="3" />
+
+                <!-- Critical Checkpoints -->
+                <circle cx="38" cy="48" r="3.5" fill="#ffffff" stroke="#25D366" stroke-width="2.5" class="cursor-pointer" />
+                <circle cx="70" cy="18" r="3.5" fill="#ffffff" stroke="#25D366" stroke-width="2.5" class="cursor-pointer" />
+                <circle cx="100" cy="0" r="4" fill="#25D366" class="animate-pulse" />
+
+                <!-- Secondary dashed loop path representing low routing latency -->
+                <path d="M 0 20 L 20 22 L 40 18 L 60 21 L 80 17 L 100 24" fill="none" stroke="#94a3b8" stroke-dasharray="4 3" stroke-width="1.5" />
+              </svg>
+            </div>
+
+            <!-- X Axis legends -->
+            <div class="flex justify-between font-mono text-[9px] text-slate-400 mt-2.5 border-t border-slate-200/80 pt-2 z-10">
+              <span>00:00 UTC</span>
+              <span>06:00 UTC</span>
+              <span>12:00 UTC</span>
+              <span>18:00 UTC</span>
+              <span class="font-bold text-[#25D366]">MONITOR SYNC LIVE</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+          5. ENTERPRISE PRICING PLAN CARDS
+          ========================================== -->
+      <section id="pricing" class="mt-28 mb-28">
+        <div class="text-center mb-12 max-w-2xl mx-auto">
+          <h2 class="font-display font-black text-slate-950 text-3xl sm:text-5xl tracking-tight">Simple Pricing Built For Success</h2>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">
+            Unlock the ultimate SaaS configuration workspace. Premium WhatsApp routing and campaign dispatch integrations loaded dynamically without any complicated setups.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          
+          <!-- Tier 1: Lite / Professional Growth -->
+          <div class="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-[32px] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(37,211,102,0.05)] transition-all duration-500 relative flex flex-col justify-between text-left group overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-emerald-500/5 to-transparent rounded-bl-full pointer-events-none"></div>
+            
+            <div class="relative z-10">
+              <span class="text-[10px] font-mono font-extrabold uppercase bg-[#dcf8c6] text-emerald-800 px-3.5 py-1.5 rounded-full">Lite Scale</span>
+              <h3 class="font-display font-extrabold text-2xl text-slate-950 mt-5">Professional Growth</h3>
+              <p class="text-xs text-slate-400 mt-1">Excellent choice for growing customer workflows</p>
+              
+              <div class="mt-6 flex items-baseline gap-1">
+                <span class="text-4xl font-black tracking-tight text-slate-950">₹4,100</span>
+                <span class="text-xs text-slate-500 font-mono">/ Month (approx. $49)</span>
+              </div>
+
+              <!-- Perks -->
+              <ul class="space-y-4 text-xs text-slate-600 mt-8 mb-8 border-t border-slate-100 pt-6">
+                <li class="flex items-center gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-[#25D366] flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Build 5 active AutoBot Rules</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-[#25D366] flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Up to 2,500 monthly delivery contacts</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-[#25D366] flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Interactive Campaign broadcasts dashboard</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-[#25D366] flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Webhook event callback integration parameters</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="relative z-10 border-t border-slate-100 pt-6 mt-4">
+              <button onclick="triggerLeadModal('Professional Growth', 4100)" class="w-full py-3.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-md text-center cursor-pointer">
+                Configure Lite Payflow
+              </button>
+            </div>
+          </div>
+
+          <!-- Tier 2: Premium / Infinite scale -->
+          <div class="bg-white border-2 border-[#25D366] rounded-[32px] p-8 shadow-[0_20px_50px_rgba(37,211,102,0.08)] hover:shadow-[0_20px_50px_rgba(37,211,102,0.12)] transition-all duration-500 relative flex flex-col justify-between text-left group overflow-hidden">
+            <div class="absolute top-0 right-10 -translate-y-1/2 bg-[#25D366] text-black text-[10px] uppercase font-mono font-black tracking-widest px-4 py-1 rounded-full z-20">
+              Elite Choice
+            </div>
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#25D366]/10 to-transparent rounded-bl-full pointer-events-none"></div>
+
+            <div class="relative z-10 font-bold">
+              <span class="text-[10px] font-mono font-extrabold uppercase bg-slate-950 text-white px-3.5 py-1.5 rounded-full">Pro Infinite</span>
+              <h3 class="font-display font-extrabold text-2xl text-slate-950 mt-5">Infinite Scale</h3>
+              <p class="text-xs text-slate-400 mt-1">Designed for robust scaling brands needing instant webhook dispatches</p>
+              
+              <div class="mt-6 flex items-baseline gap-1">
+                <span class="text-4xl font-black tracking-tight text-slate-950">₹12,500</span>
+                <span class="text-xs text-slate-500 font-mono">/ Month (approx. $149)</span>
+              </div>
+
+              <!-- Perks -->
+              <ul class="space-y-4 text-xs text-slate-600 mt-8 mb-8 border-t border-slate-100 pt-6">
+                <li class="flex items-center gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-[#25D366] flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span class="font-semibold text-slate-800">Unlimited Active AutoBot Rules</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-[#25D366] flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span class="font-semibold text-slate-800">Unlimited Contacts & High Speed Broadcast Campaign Dispatches</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-[#25D366] flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Fully unlocked webhook listeners endpoint</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-[#25D366] flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>VIP direct cloud-routing performance queue</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-[#25D366] flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span class="text-emerald-600 font-extrabold uppercase text-[10px] tracking-wide bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">Absolute SLA Gated</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="relative z-10 border-t border-slate-100 pt-6 mt-4">
+              <button onclick="triggerLeadModal('Infinite Scale', 12500)" class="w-full py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd50] text-black font-extrabold text-xs uppercase tracking-wider transition-all shadow-md text-center cursor-pointer">
+                Activate Infinite Scope
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+          6. PROFESSIONAL FAQ ACCORDION
+          ========================================== -->
+      <section id="faq" class="max-w-4xl mx-auto mt-28 mb-16">
+        <div class="text-center mb-12">
+          <h2 class="font-display font-black text-slate-950 text-3xl tracking-tight">Frictionless Automation FAQ</h2>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">
+            Everything you need to know about WebDes operations, sync patterns, and digital checkouts.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Accordion 1 -->
+          <div class="bg-white/80 border border-slate-200/60 rounded-2xl p-5 hover:border-emerald-500/20 transition-all">
+            <button class="w-full flex justify-between items-center text-left font-bold text-slate-800 text-sm focus:outline-none" onclick="toggleFaq(this)">
+              <span>How does the WebDes AutoBot rule matching engine operate?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-[#25D366] transition-transform duration-300"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-xs text-slate-500 mt-0 leading-relaxed">
+              <p class="pt-3">
+                WebDes evaluates incoming messages against active rule keywords in less than 20ms. When a keyword match occurs, our cloud-hosted node worker instantly dispatches the configured automated reply JSON back to the sender's device.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion 2 -->
+          <div class="bg-white/80 border border-slate-200/60 rounded-2xl p-5 hover:border-emerald-500/20 transition-all">
+            <button class="w-full flex justify-between items-center text-left font-bold text-slate-800 text-sm focus:outline-none" onclick="toggleFaq(this)">
+              <span>Can I customize the automated message output after activation?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-[#25D366] transition-transform duration-300"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-xs text-slate-500 mt-0 leading-relaxed">
+              <p class="pt-3">
+                Yes. Through our unified client console or directly inside the config variables file, you are empowered to alter reply parameters, phone endpoints, email handles, and webhooks without triggering system re-initialization.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion 3 -->
+          <div class="bg-white/80 border border-slate-200/60 rounded-2xl p-5 hover:border-emerald-500/20 transition-all">
+            <button class="w-full flex justify-between items-center text-left font-bold text-slate-800 text-sm focus:outline-none" onclick="toggleFaq(this)">
+              <span>What is the purpose of the Custom Webhook URL field?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-[#25D366] transition-transform duration-300"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-xs text-slate-500 mt-0 leading-relaxed">
+              <p class="pt-3">
+                The Custom Webhook URL enables synchronization with external software like CRMs, databases, or analytics logs. When a user completes the lead capture modal on this website, WebDes forwards the details via a standard HTTPS POST payload securely to your designated webhook address.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ==========================================
+        7. SAAS PROFESSIONAL FOOTER
+        ========================================== -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-16 px-4 relative z-20">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <!-- Logo and details -->
+        <div class="md:col-span-5 text-left space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-slate-950 rounded-xl flex items-center justify-center border border-emerald-500/20">
+              <span class="font-display font-extrabold text-[#25D366] text-lg">W</span>
+              <span class="font-display font-bold text-white text-sm -ml-0.5">D</span>
+            </div>
+            <span class="font-display font-extrabold text-white text-md">WebDes Intelligent Suite</span>
+          </div>
+          <p class="text-xs text-slate-500 leading-normal max-w-sm">
+            Deploying high conversion webhook engines, automated chat auto-responders, and digital workflows with zero server management overloads.
+          </p>
+        </div>
+
+        <!-- Dynamic contacts pulled from CONFIG -->
+        <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+          <div>
+            <h4 class="text-xs font-bold font-mono uppercase tracking-wider text-slate-300 mb-3">Workspace Contact</h4>
+            <div class="space-y-2 text-xs">
+              <a href="#" class="block hover:text-white transition-all text-[#25D366] font-semibold font-mono" id="contact-phone-footer">+91 0000000000</a>
+              <a href="#" class="block hover:text-white transition-all" id="contact-email-footer">contact.webdesai@gmail.com</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold font-mono uppercase tracking-wider text-slate-300 mb-3">Enterprise Pay</h4>
+            <div class="space-y-2 text-xs">
+              <div class="text-slate-400 font-mono">UPI-ID Node:</div>
+              <span class="font-mono text-white text-[11px] block bg-slate-950/70 py-1 px-2 rounded border border-slate-800" id="upi-val-footer">6291192742@kotakbank</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold font-mono uppercase tracking-wider text-slate-300 mb-3">Engineering SLA</h4>
+            <div class="space-y-2 text-xs font-mono text-[10px] text-slate-500">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-[#25D366] rounded-full"></span>
+                <span>Uptime: 99.993% Cloud</span>
+              </div>
+              <div>Node Platform: Serverless</div>
+              <div>Payload Format: JSON-RPC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto border-t border-slate-850 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-600 gap-4">
+        <span>© 2026 WebDes. All rights reserved. Precision-engineered client promotional sandbox.</span>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-slate-400">Terms of Cloud Service</a>
+          <a href="#" class="hover:text-slate-400">Privacy Protocols</a>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- ==========================================
+        8. SMART LEAD CAPTURE GLASS MODAL
+        ========================================== -->
+    <div id="lead-capture-modal" class="fixed inset-0 bg-slate-950/40 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+      <div class="glass-modal w-full max-w-md rounded-3xl p-6 sm:p-8 relative scale-95 transition-all duration-300 text-left">
+        <!-- Close CTA -->
+        <button onclick="closeLeadModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-xl transition-all cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+
+        <div class="space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 bg-[#dcf8c6]/40 border border-emerald-300/30 text-emerald-700 rounded-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="animate-pulse"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h3 class="font-display font-extrabold text-slate-900 text-lg">Secure WebDes Capture</h3>
+              <p class="text-[11px] text-slate-400 font-mono" id="modal-tier-subtext">Tier: Professional Growth</p>
+            </div>
+          </div>
+
+          <form id="lead-form" class="space-y-4">
+            <div>
+              <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono mb-1.5">Business Name / Full Name</label>
+              <input type="text" id="lead-name" required placeholder="e.g. John Doe" class="w-full text-xs p-3.5 border border-slate-200 rounded-xl focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/5 bg-slate-50/50 focus:bg-white transition-all">
+            </div>
+
+            <div>
+              <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono mb-1.5">WhatsApp Dynamic Number</label>
+              <input type="tel" id="lead-phone" required placeholder="e.g. +91 9876543210" class="w-full text-xs p-3.5 border border-slate-200 rounded-xl focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/5 bg-slate-50/50 focus:bg-white font-mono transition-all">
+            </div>
+
+            <div>
+              <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono mb-1.5">Corporate Email Address</label>
+              <input type="email" id="lead-email" required placeholder="e.g. business@gmail.com" class="w-full text-xs p-3.5 border border-slate-200 rounded-xl focus:outline-none focus:border-[#25D366] focus:ring-4 focus:ring-[#25D366]/5 bg-slate-50/50 focus:bg-white transition-all">
+            </div>
+
+            <!-- Loader status visual -->
+            <div id="lead-sync-status" class="hidden text-center text-xs font-mono py-2 text-emerald-600 font-bold bg-[#dcf8c6]/20 rounded-xl border border-emerald-400/20">
+              Syncing webhook payload serverless array...
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-[#25D366] hover:bg-[#1ebd50] text-black font-extrabold text-xs uppercase tracking-wide rounded-xl shadow-lg shadow-emerald-500/10 transition-all flex items-center justify-center gap-2 cursor-pointer mt-2">
+              <span>Validate & Proceed</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ==========================================
+        9. DYNAMIC CHECKOUT / DESKTOP QR BLOCK
+        ========================================== -->
+    <div id="checkout-modal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+      <div class="glass-modal w-full max-w-md rounded-3xl p-6 sm:p-8 relative scale-95 transition-all duration-300 text-left">
+        <!-- Close CTA -->
+        <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-750 hover:bg-slate-100 rounded-xl transition-all cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+
+        <div class="space-y-5">
+          <!-- Header -->
+          <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+            <div class="w-10 h-10 bg-slate-950 rounded-xl flex items-center justify-center border border-[#25D366]/20">
+              <span class="font-display font-extrabold text-[#25D366] text-lg">W</span>
+              <span class="font-display font-bold text-white text-xs -ml-0.5">D</span>
+            </div>
+            <div>
+              <h3 class="font-display font-extrabold text-slate-900 text-md">WebDes Checkout Portal</h3>
+              <p class="text-[10px] text-slate-405 font-mono">Verify sync & dynamic payment nodes</p>
+            </div>
+          </div>
+
+          <!-- Checkout Flow Info visual -->
+          <div class="space-y-4">
+            <div class="bg-emerald-50 border border-emerald-200/50 p-4 rounded-2xl flex items-center gap-3">
+              <div class="p-2 bg-[#25D366] text-white rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="text-left">
+                <span class="block text-[10px] uppercase font-mono tracking-wider font-extrabold text-emerald-800">Webhook Sync Success ✓</span>
+                <span class="text-xs text-slate-650" id="checkout-synced-message">Payload queued to serverless node.</span>
+              </div>
+            </div>
+
+            <!-- Custom dynamic canvas QR scanning mockup -->
+            <div class="flex flex-col items-center py-2 relative">
+              <div class="relative w-48 h-48 bg-white border border-slate-200 p-3.5 rounded-2xl shadow-inner overflow-hidden flex items-center justify-center">
+                <!-- Glowing laser line -->
+                <div class="absolute inset-x-0 h-0.5 bg-[#25D366] shadow-[0_0_10px_#25D366] scan-line pointer-events-none"></div>
+                
+                <!-- Dynamic High-Fidelity checkout QR SVG element -->
+                <div id="dynamic-qr-container" class="w-full h-full flex items-center justify-center">
+                  <!-- Generated dynamic QR code vector fallback -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-full h-full">
+                    <!-- Standard QR structural squares -->
+                    <rect x="0" y="0" width="30" height="30" fill="#111" />
+                    <rect x="5" y="5" width="20" height="20" fill="#fff" />
+                    <rect x="10" y="10" width="10" height="10" fill="#25D366" />
+
+                    <rect x="70" y="0" width="30" height="30" fill="#111" />
+                    <rect x="75" y="5" width="20" height="20" fill="#fff" />
+                    <rect x="80" y="10" width="10" height="10" fill="#128C7E" />
+
+                    <rect x="0" y="70" width="30" height="30" fill="#111" />
+                    <rect x="5" y="75" width="20" height="20" fill="#fff" />
+                    <rect x="10" y="80" width="10" height="10" fill="#075E54" />
+
+                    <!-- Middle logo backdrop -->
+                    <rect x="35" y="35" width="30" height="30" rx="6" fill="#111" />
+                    <circle cx="50" cy="50" r="10" fill="#25D366" />
+                    
+                    <!-- Random matrix scan bits to feel authentic -->
+                    <rect x="35" y="0" width="5" height="5" fill="#111" /><rect x="45" y="10" width="10" height="5" fill="#111" /><rect x="60" y="5" width="5" height="15" fill="#111" />
+                    <rect x="35" y="20" width="15" height="5" fill="#111" /><rect x="55" y="25" width="10" height="5" fill="#25D366" />
+                    <rect x="0" y="35" width="10" height="5" fill="#111" /><rect x="15" y="45" width="5" height="10" fill="#111" /><rect x="25" y="35" width="5" height="5" fill="#111" />
+                    <rect x="0" y="55" width="5" height="10" fill="#25D366" /><rect x="15" y="55" width="10" height="5" fill="#111" />
+                    <rect x="75" y="35" width="15" height="5" fill="#111" /><rect x="70" y="45" width="5" height="10" fill="#111" /><rect x="85" y="55" width="15" height="5" fill="#25D366" />
+                    <rect x="35" y="70" width="5" height="15" fill="#111" /><rect x="45" y="80" width="15" height="5" fill="#111" /><rect x="65" y="75" width="10" height="5" fill="#111" />
+                    <rect x="35" y="90" width="20" height="5" fill="#25D366" /><rect x="60" y="85" width="5" height="10" fill="#111" />
+                  </svg>
+                </div>
+              </div>
+              <span id="amount-indicator-checkout" class="mt-3.5 text-xs font-black tracking-widest font-mono text-slate-800 bg-slate-100 px-4 py-1.5 rounded-full border border-slate-200">PAY ₹4,100</span>
+            </div>
+
+            <!-- Steps -->
+            <div class="space-y-2.5 text-[11px] text-slate-500 font-mono">
+              <div class="flex items-start gap-2 text-left">
+                <span class="text-[#25D366] font-bold">1.</span>
+                <span>Open any UPI application (BHIM, GPay, PhonePe, Paytm, or Kotak App).</span>
+              </div>
+              <div class="flex items-start gap-2 text-left">
+                <span class="text-[#25D366] font-bold">2.</span>
+                <span>Scan the QR code display or transfer money directly using the UPI ID.</span>
+              </div>
+              <div class="flex items-start gap-2 text-left">
+                <span class="text-[#25D366] font-bold">3.</span>
+                <span>On pay receipt, AutoBot sync will trigger instantly to your account.</span>
+              </div>
+            </div>
+
+            <!-- Core parameters values -->
+            <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 text-left font-mono text-[10.5px]">
+              <div class="flex justify-between pb-1.5 border-b border-slate-900 mb-1.5">
+                <span class="text-slate-505">TARGET_UPI_VAL:</span>
+                <span id="checkout-upi-id-label" class="text-white font-bold">6291192742@kotakbank</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-505">SLA_SECURED:</span>
+                <span class="text-[#25D366] font-bold">YES (WEB_SYNC_SBF)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- External configurations import -->
+    <script src="/config.js"></script>
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
