@@ -6,9 +6,14 @@
     
     <!-- SEO Meta Tags -->
     <title>WebDes | Premium WhatsApp Automation & Auto-Reply Bot for Business</title>
-    <meta name="description" content="Automate your customer support and sales with WebDes. The ultimate WhatsApp automation tool for businesses, real estate, and agencies. Get a free trial today.">
-    <meta name="keywords" content="WhatsApp automation, Auto-reply bot, WhatsApp CRM, Business automation, WebDes, Lead capture WhatsApp">
+    <meta name="description" content="Automate your customer support and sales with WebDes. The ultimate WhatsApp automation tool and CRM for real estate, agencies, and e-commerce businesses.">
+    <meta name="keywords" content="WhatsApp automation, Auto-reply bot, WhatsApp CRM, Business automation, WebDes, Lead capture WhatsApp, WhatsApp API integration, Auto-responder">
     <meta name="author" content="WebDes">
+    
+    <!-- Open Graph for Social Media Sharing -->
+    <meta property="og:title" content="WebDes | Premium WhatsApp Automation SaaS">
+    <meta property="og:description" content="Put your WhatsApp sales on auto-pilot. Capture leads and auto-reply instantly.">
+    <meta property="og:type" content="website">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,8 +49,8 @@
         .wild-animal { position: absolute; transition: transform 0.1s ease-out; will-change: transform; pointer-events: none; z-index: 50; }
         #eagle-container { top: 15px; left: 180px; z-index: 60; }
         #elephant-container { top: 15%; right: -5%; z-index: 0; opacity: 0.15; }
-        #owl-container { top: -40px; right: 10%; z-index: 40; } /* Sits on Features section */
-        #tiger-container { bottom: -30px; left: 5%; z-index: 40; } /* Sits on Pricing */
+        #owl-container { top: -40px; right: 10%; z-index: 40; }
+        #tiger-container { bottom: -30px; left: 5%; z-index: 40; }
 
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
         .animate-float { animation: float 6s ease-in-out infinite; }
@@ -88,7 +93,7 @@
             
             <div class="hidden md:flex gap-8 font-semibold text-sm text-slate-600">
                 <a href="#features" class="hover:text-wa-green transition">Features</a>
-                <a href="#how-it-works" class="hover:text-wa-green transition">How it Works</a>
+                <a href="#use-cases" class="hover:text-wa-green transition">Industries</a>
                 <a href="#pricing" class="hover:text-wa-green transition">Pricing</a>
                 <a href="#faq" class="hover:text-wa-green transition">FAQ</a>
             </div>
@@ -104,16 +109,16 @@
         </div>
     </nav>
 
-    <!-- 4. HERO SECTION (SEO Optimized) -->
+    <!-- 4. HERO SECTION -->
     <section class="pt-40 pb-20 px-6 relative z-10 text-center max-w-4xl mx-auto">
         <div class="inline-block bg-wa-light text-wa-dark px-4 py-1.5 rounded-full text-xs font-bold mb-6 border border-wa-green/30">
-            🚀 The #1 WhatsApp Automation Platform
+            🚀 The #1 WhatsApp Automation & CRM Platform
         </div>
         <h2 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-6">
             Put Your WhatsApp Sales on <span class="text-wa-green">Auto-Pilot.</span>
         </h2>
         <p class="text-lg text-slate-500 mb-10 max-w-2xl mx-auto">
-            Stop losing leads to slow replies. WebDes is a powerful WhatsApp CRM that automatically replies to customers, captures lead data, and syncs to your Google Sheets 24/7.
+            Stop losing valuable leads to slow replies. WebDes is a powerful WhatsApp CRM software that automatically replies to customers, captures essential lead data, and syncs directly to your database 24/7. Built for high-volume businesses.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <button onclick="openLeadModal('7-Day Free Trial')" class="bg-wa-green text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-[#1ebd50] transition shadow-[0_10px_30px_rgba(37,211,102,0.3)] hover:scale-105 transform duration-200">
@@ -125,7 +130,7 @@
         </div>
     </section>
 
-    <!-- 5. FEATURES SECTION (Rich Content) -->
+    <!-- 5. FEATURES SECTION -->
     <section id="features" class="py-20 px-6 bg-white relative">
         <div id="owl-container" class="wild-animal w-20 h-20 hidden md:block">
             <img src="https://cdn-icons-png.flaticon.com/512/3094/3094139.png" alt="Owl" class="w-full h-full object-contain">
@@ -133,56 +138,85 @@
         
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-black mb-4">Everything You Need to Scale</h2>
-                <p class="text-slate-500">Built for agencies, brokers, and high-volume digital businesses.</p>
+                <h2 class="text-3xl md:text-4xl font-black mb-4">Enterprise-Grade WhatsApp Features</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Our WhatsApp auto-reply bot provides everything you need to scale your customer support and sales pipelines without hiring extra staff.</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="p-8 border border-slate-100 rounded-3xl bg-slate-50 hover:shadow-lg transition">
                     <div class="text-wa-green text-3xl mb-4">🤖</div>
                     <h3 class="font-bold text-xl mb-3">Intelligent Auto-Replies</h3>
-                    <p class="text-slate-500 text-sm">Set up trigger keywords. When a client messages "Pricing", the bot instantly sends your catalog and payment links without manual effort.</p>
+                    <p class="text-slate-500 text-sm leading-relaxed">Set up advanced trigger keywords. When a client messages "Pricing" or "Brochure", our WhatsApp bot instantly sends your catalog, PDFs, and payment links. Perfect for handling hundreds of inquiries simultaneously without human error.</p>
                 </div>
                 <div class="p-8 border border-slate-100 rounded-3xl bg-slate-50 hover:shadow-lg transition">
                     <div class="text-wa-green text-3xl mb-4">📊</div>
-                    <h3 class="font-bold text-xl mb-3">Seamless Data Sync</h3>
-                    <p class="text-slate-500 text-sm">Never do manual data entry again. Capture client names and emails directly from chat and push them securely to Google Sheets or your CRM.</p>
+                    <h3 class="font-bold text-xl mb-3">Automated Lead Capture</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Never do manual data entry again. WebDes acts as a seamless WhatsApp CRM. It captures client names, phone numbers, and email addresses directly from the chat and pushes them securely to Google Sheets or your custom CRM webhook.</p>
                 </div>
                 <div class="p-8 border border-slate-100 rounded-3xl bg-slate-50 hover:shadow-lg transition">
                     <div class="text-wa-green text-3xl mb-4">⚡</div>
                     <h3 class="font-bold text-xl mb-3">Zero Server Maintenance</h3>
-                    <p class="text-slate-500 text-sm">Hosted 100% on the cloud. No need to keep your PC on or scan QR codes daily. Our Webhook technology keeps your bot live 24/7/365.</p>
+                    <p class="text-slate-500 text-sm leading-relaxed">Hosted 100% on a secure cloud infrastructure. There is no need to keep your PC turned on or scan QR codes daily. Our robust Webhook technology keeps your WhatsApp automation engine live 24 hours a day, 365 days a year.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. HOW IT WORKS -->
-    <section id="how-it-works" class="py-20 px-6">
+    <!-- 6. NEW: USE CASES / INDUSTRIES (FOR SEO) -->
+    <section id="use-cases" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black mb-4">Who Uses WebDes WhatsApp Automation?</h2>
+                <p class="text-slate-500">Tailored automation solutions for modern digital businesses.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-3xl border border-slate-200">
+                    <h4 class="font-black text-xl mb-3 text-slate-900">Real Estate Agencies</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Real estate brokers receive hundreds of property inquiries daily. Use WebDes to automatically send property brochures, location links, and pricing details the second a lead messages you from Facebook or Google Ads. Capture their details instantly to schedule site visits.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border border-slate-200">
+                    <h4 class="font-black text-xl mb-3 text-slate-900">Digital Marketing Agencies</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Manage your clients' inbound leads efficiently. Set up custom keyword rules to qualify leads, answer FAQs about your marketing services, and funnel high-ticket clients directly to your calendar booking links without lifting a finger.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border border-slate-200">
+                    <h4 class="font-black text-xl mb-3 text-slate-900">E-Commerce Brands</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Reduce your customer support workload by 80%. Let the WhatsApp bot handle order tracking queries, return policies, and product availability questions. Send automated payment links (UPI) directly in the chat to recover abandoned carts.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border border-slate-200">
+                    <h4 class="font-black text-xl mb-3 text-slate-900">Coaches & Consultants</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Deliver your digital products, course links, and webinar registrations instantly. When a student pays, the bot automatically verifies the payment and delivers the private access links directly via WhatsApp message.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. HOW IT WORKS -->
+    <section id="how-it-works" class="py-20 px-6 bg-white">
         <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-3xl font-black mb-12">How WebDes Works in 3 Steps</h2>
+            <h2 class="text-3xl md:text-4xl font-black mb-12">How Our Automation Works in 3 Steps</h2>
             <div class="grid md:grid-cols-3 gap-12">
                 <div>
                     <div class="w-16 h-16 bg-wa-light text-wa-dark font-black text-2xl flex items-center justify-center rounded-2xl mx-auto mb-6">1</div>
                     <h4 class="font-bold text-lg mb-2">Connect Your Number</h4>
-                    <p class="text-sm text-slate-500">Link your business WhatsApp number to our secure cloud dashboard in minutes.</p>
+                    <p class="text-sm text-slate-500">Link your business WhatsApp number to our secure cloud dashboard in minutes. No complex API approvals required.</p>
                 </div>
                 <div>
                     <div class="w-16 h-16 bg-wa-light text-wa-dark font-black text-2xl flex items-center justify-center rounded-2xl mx-auto mb-6">2</div>
                     <h4 class="font-bold text-lg mb-2">Set Your Rules</h4>
-                    <p class="text-sm text-slate-500">Define what the bot should reply based on customer keywords and questions.</p>
+                    <p class="text-sm text-slate-500">Define what the bot should reply based on customer keywords, trigger phrases, and frequently asked questions.</p>
                 </div>
                 <div>
                     <div class="w-16 h-16 bg-wa-green text-white font-black text-2xl flex items-center justify-center rounded-2xl mx-auto mb-6 shadow-lg shadow-wa-green/30">3</div>
                     <h4 class="font-bold text-lg mb-2">Watch Sales Grow</h4>
-                    <p class="text-sm text-slate-500">Relax as the bot handles incoming leads, answers queries, and collects data automatically.</p>
+                    <p class="text-sm text-slate-500">Relax as the bot handles incoming inbound leads, answers queries, and collects lead data automatically into your CRM.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. PRICING SECTION -->
-    <section id="pricing" class="py-20 px-6 relative bg-white">
+    <!-- 8. PRICING SECTION -->
+    <section id="pricing" class="py-20 px-6 relative">
         <div id="tiger-container" class="wild-animal w-40 h-40 hidden lg:block">
             <img src="https://cdn-icons-png.flaticon.com/512/3094/3094132.png" alt="Tiger" class="w-full h-full object-contain">
         </div>
@@ -190,7 +224,7 @@
         <div class="max-w-5xl mx-auto relative z-10">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-black mb-4">Simple, Transparent Pricing</h2>
-                <p class="text-slate-500">Start with a trial, upgrade when you scale.</p>
+                <p class="text-slate-500">Start with a trial, upgrade when you scale. No hidden API fees.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
@@ -205,7 +239,7 @@
                             <li class="flex gap-2">✅ Build 5 active AutoBot Rules</li>
                             <li class="flex gap-2">✅ 2,500 monthly delivery contacts</li>
                             <li class="flex gap-2">✅ Cloud Webhook Integrations</li>
-                            <li class="flex gap-2">✅ Email Support</li>
+                            <li class="flex gap-2">✅ Standard Email Support</li>
                         </ul>
                     </div>
                     <button onclick="openLeadModal('Pro Scale')" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-slate-800 transition">
@@ -238,28 +272,32 @@
         </div>
     </section>
 
-    <!-- 8. FAQ SECTION (SEO Friendly) -->
-    <section id="faq" class="py-20 px-6">
+    <!-- 9. FAQ SECTION -->
+    <section id="faq" class="py-20 px-6 bg-white">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-3xl font-black mb-10 text-center">Frequently Asked Questions</h2>
             <div class="space-y-4">
-                <div class="bg-white p-6 rounded-2xl border border-slate-200">
-                    <h4 class="font-bold text-lg mb-2">Can I try WebDes before paying?</h4>
-                    <p class="text-slate-500 text-sm">Absolutely. We offer a trial period so you can test our auto-reply features and webhook speeds before committing to a paid plan. Just click on "Request Trial".</p>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-lg mb-2">Can I try WebDes WhatsApp Automation before paying?</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Absolutely. We offer a 7-day trial period so you can test our auto-reply features, keyword triggers, and webhook data syncing speeds before committing to a paid plan. Just click on "Request Trial" to get started.</p>
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200">
-                    <h4 class="font-bold text-lg mb-2">Do I need coding skills to set this up?</h4>
-                    <p class="text-slate-500 text-sm">Not at all! Our dashboard is designed to be plug-and-play. If you know how to use standard WhatsApp, you can configure our bot in minutes.</p>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-lg mb-2">Do I need coding skills to set up the chatbot?</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Not at all! Our WhatsApp CRM dashboard is designed to be completely plug-and-play. If you know how to use standard WhatsApp, you can configure our bot, set up automated replies, and capture leads in under 10 minutes.</p>
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200">
-                    <h4 class="font-bold text-lg mb-2">Is my data secure?</h4>
-                    <p class="text-slate-500 text-sm">Security is our top priority. We use secure cloud routing and webhook payloads to ensure your customer data flows directly to your designated CRM without being stored unencrypted.</p>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-lg mb-2">Is my customer data secure?</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Security is our top priority. We use secure cloud routing and HTTPS webhook payloads to ensure your customer data flows directly to your designated CRM or Google Sheets without being permanently stored unencrypted on our servers.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-lg mb-2">Can I send payment links directly through the bot?</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Yes. You can configure the bot to automatically reply with UPI payment links, QR codes, or Stripe checkout URLs whenever a customer asks for pricing or wants to complete a purchase.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 9. FOOTER -->
+    <!-- 10. FOOTER -->
     <footer class="bg-slate-900 text-slate-400 py-12 px-6 border-t border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-3">
@@ -271,16 +309,14 @@
             <div class="text-center md:text-right text-sm space-y-1">
                 <p>Sales & Support: <span id="footer-phone" class="text-wa-green font-bold"></span></p>
                 <p>Email: <span id="footer-email" class="text-white"></span></p>
-                <p class="text-xs mt-2 text-slate-500">© 2026 WebDes. Premium WhatsApp SaaS.</p>
+                <p class="text-xs mt-2 text-slate-500">© 2026 WebDes. Premium WhatsApp SaaS for Growing Businesses.</p>
             </div>
         </div>
     </footer>
 
-    <!-- 10. MODALS (Lead Capture & Payment) -->
-    
+    <!-- 11. MODALS -->
     <div id="modal-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
 
-    <!-- Lead / Trial Modal -->
     <div id="lead-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md hidden opacity-0 transition-opacity duration-300 px-4">
         <div class="glass-modal rounded-3xl p-8 relative">
             <button onclick="closeModals()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-xl font-bold">&times;</button>
@@ -309,7 +345,6 @@
         </div>
     </div>
 
-    <!-- Payment QR Modal -->
     <div id="payment-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-sm hidden opacity-0 transition-opacity duration-300 px-4">
         <div class="glass-modal rounded-3xl p-8 relative text-center">
             <button onclick="closeModals()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-xl font-bold">&times;</button>
@@ -328,15 +363,13 @@
         </div>
     </div>
 
-    <!-- 11. JAVASCRIPT LOGIC -->
+    <!-- 12. JAVASCRIPT LOGIC -->
     <script>
-        // Populate Config Data
         document.getElementById('footer-phone').innerText = CONFIG.phone;
         document.getElementById('footer-email').innerText = CONFIG.email;
         document.getElementById('payment-qr-img').src = CONFIG.qr_image;
         document.getElementById('payment-upi-text').innerText = CONFIG.upi_id;
 
-        // Modal Logic
         const overlay = document.getElementById('modal-overlay');
         const leadModal = document.getElementById('lead-modal');
         const paymentModal = document.getElementById('payment-modal');
@@ -407,7 +440,6 @@
                 leadModal.classList.add('opacity-0');
                 setTimeout(() => { leadModal.classList.add('hidden'); }, 300);
 
-                // Show payment ONLY if they selected a paid plan
                 if(currentAmount !== "Trial/Demo") {
                     if (isMobile()) {
                         window.location.href = `upi://pay?pa=${CONFIG.upi_id}&pn=WebDes&am=${currentAmount}&cu=INR`;
@@ -418,7 +450,6 @@
                         setTimeout(() => { paymentModal.classList.remove('opacity-0'); }, 10);
                     }
                 } else {
-                    // Show a success alert for Trial/Demo
                     setTimeout(() => {
                         alert("Thank you! Your request has been received. Our team will contact you shortly.");
                         closeModals();
