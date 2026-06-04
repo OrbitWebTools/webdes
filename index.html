@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebDes | Premium WhatsApp Automation</title>
     
-    <!-- Tailwind CSS (Direct Link so you don't need any build tools) -->
+    <!-- SEO Meta Tags -->
+    <title>WebDes | Premium WhatsApp Automation & Auto-Reply Bot for Business</title>
+    <meta name="description" content="Automate your customer support and sales with WebDes. The ultimate WhatsApp automation tool for businesses, real estate, and agencies. Get a free trial today.">
+    <meta name="keywords" content="WhatsApp automation, Auto-reply bot, WhatsApp CRM, Business automation, WebDes, Lead capture WhatsApp">
+    <meta name="author" content="WebDes">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
-    <!-- Setup Tailwind Colors to match WhatsApp Theme -->
     <script>
         tailwind.config = {
             theme: {
@@ -32,62 +36,31 @@
     </script>
 
     <style>
-        body {
-            background-color: #f8fafc;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
+        body { background-color: #f8fafc; overflow-x: hidden; scroll-behavior: smooth; }
+        .glass-card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
+        .glass-modal { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border: 1px solid rgba(37, 211, 102, 0.2); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        
+        /* 3D Wild Tech Animals */
+        .wild-animal { position: absolute; transition: transform 0.1s ease-out; will-change: transform; pointer-events: none; z-index: 50; }
+        #eagle-container { top: 15px; left: 180px; z-index: 60; }
+        #elephant-container { top: 15%; right: -5%; z-index: 0; opacity: 0.15; }
+        #owl-container { top: -40px; right: 10%; z-index: 40; } /* Sits on Features section */
+        #tiger-container { bottom: -30px; left: 5%; z-index: 40; } /* Sits on Pricing */
 
-        /* Glassmorphism Classes */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .glass-modal {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(37, 211, 102, 0.2);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        /* 3D Animal Floating Elements */
-        .wild-animal {
-            position: absolute;
-            transition: transform 0.1s ease-out; /* Smooth JS tracking */
-            will-change: transform;
-            pointer-events: none; /* So they don't block clicks */
-            z-index: 50;
-        }
-
-        /* Specific Animal Placements */
-        #eagle-container { top: 15px; left: 160px; z-index: 60; }
-        #elephant-container { top: 20%; right: -5%; z-index: 0; opacity: 0.15; /* Sits subtly in background */ }
-        #tiger-container { bottom: -50px; left: 10%; z-index: 40; }
-
-        /* Custom Animations */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
         .animate-float { animation: float 6s ease-in-out infinite; }
     </style>
 </head>
 <body class="text-slate-800 relative">
 
-    <!-- ==========================================
-         1. CONFIGURATION BLOCK (EDIT THIS)
-         ========================================== -->
+    <!-- 1. CONFIGURATION DATA -->
     <script>
         const CONFIG = {
             phone: "+91 6291192742",
             email: "contact.webdesai@gmail.com",
             upi_id: "6291192742@kotakbank",
-            qr_image: "./qr-code.png", // Just drop your qr-code.png in the same folder
-            render_webhook_url: "YOUR_RENDER_URL_HERE", // PASTE RENDER URL HERE
+            qr_image: "./qr-code.png", 
+            render_webhook_url: "YOUR_RENDER_URL_HERE", 
             pricing: {
                 pro: { name: "Pro Scale", price: "4100" },
                 infinite: { name: "Infinite Scale", price: "12500" }
@@ -95,80 +68,134 @@
         };
     </script>
 
-    <!-- ==========================================
-         2. WILD TECH ANIMALS (REPLACE SRC URLs)
-         ========================================== -->
-    <!-- The Eagle (Near Logo) -->
-    <div id="eagle-container" class="wild-animal animate-float w-24 h-24">
-        <!-- Replace src with your transparent Eagle GIF/WebP -->
-        <img src="https://cdn-icons-png.flaticon.com/512/3094/3094144.png" alt="Eagle" class="w-full h-full object-contain drop-shadow-lg opacity-80">
+    <!-- 2. WILD TECH ANIMALS -->
+    <div id="eagle-container" class="wild-animal animate-float w-20 h-20 hidden md:block">
+        <img src="https://cdn-icons-png.flaticon.com/512/3094/3094144.png" alt="Eagle" class="w-full h-full object-contain opacity-90">
     </div>
-
-    <!-- The Elephant (Behind Hero) -->
-    <div id="elephant-container" class="wild-animal animate-float w-[500px] h-[500px]">
-        <!-- Replace src with your transparent Elephant GIF/WebP -->
+    <div id="elephant-container" class="wild-animal animate-float w-[500px] h-[500px] hidden lg:block">
         <img src="https://cdn-icons-png.flaticon.com/512/3094/3094121.png" alt="Elephant" class="w-full h-full object-contain">
     </div>
 
-    <!-- The Tiger (Near Pricing) -->
-    <div id="tiger-container" class="wild-animal w-48 h-48">
-        <!-- Replace src with your transparent Tiger GIF/WebP -->
-        <img src="https://cdn-icons-png.flaticon.com/512/3094/3094132.png" alt="Tiger" class="w-full h-full object-contain drop-shadow-2xl">
-    </div>
-
-
-    <!-- ==========================================
-         3. NAVBAR
-         ========================================== -->
+    <!-- 3. NAVBAR -->
     <nav class="fixed w-full top-0 z-40 glass-card">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center border-2 border-wa-green shadow-[0_0_15px_rgba(37,211,102,0.3)]">
-                    <span class="font-black text-wa-green text-xl">W</span><span class="font-black text-white text-xl">D</span>
+                <div class="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center border-2 border-wa-green">
+                    <span class="font-black text-wa-green text-lg">W</span><span class="font-black text-white text-lg">D</span>
                 </div>
-                <div>
-                    <h1 class="font-black text-xl tracking-tight">WebDes</h1>
-                    <span class="text-[10px] text-wa-green font-bold uppercase tracking-widest">Automation Engine</span>
-                </div>
+                <h1 class="font-black text-xl tracking-tight hidden sm:block">WebDes</h1>
             </div>
-            <button onclick="openLeadModal('Navbar Request')" class="bg-slate-900 text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-slate-800 transition shadow-lg">
-                Get Demo
-            </button>
+            
+            <div class="hidden md:flex gap-8 font-semibold text-sm text-slate-600">
+                <a href="#features" class="hover:text-wa-green transition">Features</a>
+                <a href="#how-it-works" class="hover:text-wa-green transition">How it Works</a>
+                <a href="#pricing" class="hover:text-wa-green transition">Pricing</a>
+                <a href="#faq" class="hover:text-wa-green transition">FAQ</a>
+            </div>
+
+            <div class="flex gap-3">
+                <button onclick="openLeadModal('Free Trial Request')" class="bg-white text-slate-900 border border-slate-300 px-4 py-2 rounded-lg font-bold text-sm hover:bg-slate-50 transition hidden sm:block">
+                    Request Trial
+                </button>
+                <button onclick="openLeadModal('Demo Booking')" class="bg-wa-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-[#1ebd50] transition shadow-lg">
+                    Book Demo
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- ==========================================
-         4. HERO SECTION
-         ========================================== -->
+    <!-- 4. HERO SECTION (SEO Optimized) -->
     <section class="pt-40 pb-20 px-6 relative z-10 text-center max-w-4xl mx-auto">
         <div class="inline-block bg-wa-light text-wa-dark px-4 py-1.5 rounded-full text-xs font-bold mb-6 border border-wa-green/30">
-            🟢 100% Cloud-Based Architecture
+            🚀 The #1 WhatsApp Automation Platform
         </div>
-        <h2 class="text-5xl md:text-7xl font-black text-slate-900 tracking-tight leading-tight mb-6">
-            Automate WhatsApp. <br>
-            <span class="text-wa-green">Scale Instantly.</span>
+        <h2 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+            Put Your WhatsApp Sales on <span class="text-wa-green">Auto-Pilot.</span>
         </h2>
         <p class="text-lg text-slate-500 mb-10 max-w-2xl mx-auto">
-            Eliminate manual replies. Deploy zero-latency auto-bots, capture leads instantly, and sync data seamlessly to your CRM.
+            Stop losing leads to slow replies. WebDes is a powerful WhatsApp CRM that automatically replies to customers, captures lead data, and syncs to your Google Sheets 24/7.
         </p>
-        <button onclick="openLeadModal('Hero CTA')" class="bg-wa-green text-white px-10 py-4 rounded-xl font-black text-lg hover:bg-[#1ebd50] transition shadow-[0_10px_30px_rgba(37,211,102,0.3)] hover:scale-105 transform duration-200">
-            Deploy Your Bot Now
-        </button>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="openLeadModal('7-Day Free Trial')" class="bg-wa-green text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-[#1ebd50] transition shadow-[0_10px_30px_rgba(37,211,102,0.3)] hover:scale-105 transform duration-200">
+                Start 7-Day Free Trial
+            </button>
+            <a href="#pricing" class="bg-white text-slate-800 border-2 border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition flex items-center justify-center">
+                View Pricing
+            </a>
+        </div>
     </section>
 
-    <!-- ==========================================
-         5. PRICING SECTION
-         ========================================== -->
-    <section class="py-20 px-6 relative z-10" id="pricing-section">
-        <div class="max-w-5xl mx-auto">
+    <!-- 5. FEATURES SECTION (Rich Content) -->
+    <section id="features" class="py-20 px-6 bg-white relative">
+        <div id="owl-container" class="wild-animal w-20 h-20 hidden md:block">
+            <img src="https://cdn-icons-png.flaticon.com/512/3094/3094139.png" alt="Owl" class="w-full h-full object-contain">
+        </div>
+        
+        <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h3 class="text-4xl font-black mb-4">Enterprise Pricing</h3>
-                <p class="text-slate-500">Transparent investments for aggressive growth.</p>
+                <h2 class="text-3xl font-black mb-4">Everything You Need to Scale</h2>
+                <p class="text-slate-500">Built for agencies, brokers, and high-volume digital businesses.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 border border-slate-100 rounded-3xl bg-slate-50 hover:shadow-lg transition">
+                    <div class="text-wa-green text-3xl mb-4">🤖</div>
+                    <h3 class="font-bold text-xl mb-3">Intelligent Auto-Replies</h3>
+                    <p class="text-slate-500 text-sm">Set up trigger keywords. When a client messages "Pricing", the bot instantly sends your catalog and payment links without manual effort.</p>
+                </div>
+                <div class="p-8 border border-slate-100 rounded-3xl bg-slate-50 hover:shadow-lg transition">
+                    <div class="text-wa-green text-3xl mb-4">📊</div>
+                    <h3 class="font-bold text-xl mb-3">Seamless Data Sync</h3>
+                    <p class="text-slate-500 text-sm">Never do manual data entry again. Capture client names and emails directly from chat and push them securely to Google Sheets or your CRM.</p>
+                </div>
+                <div class="p-8 border border-slate-100 rounded-3xl bg-slate-50 hover:shadow-lg transition">
+                    <div class="text-wa-green text-3xl mb-4">⚡</div>
+                    <h3 class="font-bold text-xl mb-3">Zero Server Maintenance</h3>
+                    <p class="text-slate-500 text-sm">Hosted 100% on the cloud. No need to keep your PC on or scan QR codes daily. Our Webhook technology keeps your bot live 24/7/365.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. HOW IT WORKS -->
+    <section id="how-it-works" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-black mb-12">How WebDes Works in 3 Steps</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <div class="w-16 h-16 bg-wa-light text-wa-dark font-black text-2xl flex items-center justify-center rounded-2xl mx-auto mb-6">1</div>
+                    <h4 class="font-bold text-lg mb-2">Connect Your Number</h4>
+                    <p class="text-sm text-slate-500">Link your business WhatsApp number to our secure cloud dashboard in minutes.</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 bg-wa-light text-wa-dark font-black text-2xl flex items-center justify-center rounded-2xl mx-auto mb-6">2</div>
+                    <h4 class="font-bold text-lg mb-2">Set Your Rules</h4>
+                    <p class="text-sm text-slate-500">Define what the bot should reply based on customer keywords and questions.</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 bg-wa-green text-white font-black text-2xl flex items-center justify-center rounded-2xl mx-auto mb-6 shadow-lg shadow-wa-green/30">3</div>
+                    <h4 class="font-bold text-lg mb-2">Watch Sales Grow</h4>
+                    <p class="text-sm text-slate-500">Relax as the bot handles incoming leads, answers queries, and collects data automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. PRICING SECTION -->
+    <section id="pricing" class="py-20 px-6 relative bg-white">
+        <div id="tiger-container" class="wild-animal w-40 h-40 hidden lg:block">
+            <img src="https://cdn-icons-png.flaticon.com/512/3094/3094132.png" alt="Tiger" class="w-full h-full object-contain">
+        </div>
+        
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-slate-500">Start with a trial, upgrade when you scale.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 relative">
+            <div class="grid md:grid-cols-2 gap-8">
                 <!-- Plan 1 -->
-                <div class="glass-card rounded-3xl p-10 flex flex-col justify-between hover:-translate-y-2 transition duration-300">
+                <div class="glass-card rounded-3xl p-10 flex flex-col justify-between border border-slate-200">
                     <div>
                         <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Pro Scale</span>
                         <div class="mt-6 mb-8">
@@ -177,70 +204,87 @@
                         <ul class="space-y-4 text-sm font-semibold text-slate-600 mb-8">
                             <li class="flex gap-2">✅ Build 5 active AutoBot Rules</li>
                             <li class="flex gap-2">✅ 2,500 monthly delivery contacts</li>
-                            <li class="flex gap-2">✅ Webhook event callback integrations</li>
+                            <li class="flex gap-2">✅ Cloud Webhook Integrations</li>
+                            <li class="flex gap-2">✅ Email Support</li>
                         </ul>
                     </div>
                     <button onclick="openLeadModal('Pro Scale')" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-slate-800 transition">
-                        Select Pro Scale
+                        Get Started
                     </button>
                 </div>
 
                 <!-- Plan 2 -->
-                <div class="glass-card rounded-3xl p-10 flex flex-col justify-between border-2 border-wa-green relative hover:-translate-y-2 transition duration-300 shadow-[0_0_40px_rgba(37,211,102,0.15)]">
+                <div class="glass-card rounded-3xl p-10 flex flex-col justify-between border-2 border-wa-green relative shadow-[0_0_40px_rgba(37,211,102,0.15)]">
                     <div class="absolute top-0 right-10 -translate-y-1/2 bg-wa-green text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider">
-                        Infinite Scale
+                        Most Popular
                     </div>
                     <div>
-                        <span class="bg-wa-light text-wa-dark px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Elite VIP</span>
+                        <span class="bg-wa-light text-wa-dark px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Infinite Scale</span>
                         <div class="mt-6 mb-8">
                             <span class="text-5xl font-black">₹12,500</span><span class="text-slate-500">/mo</span>
                         </div>
                         <ul class="space-y-4 text-sm font-semibold text-slate-600 mb-8">
-                            <li class="flex gap-2">✅ Unlimited Active AutoBot Rules</li>
-                            <li class="flex gap-2">✅ Unlimited Contacts & Campaigns</li>
-                            <li class="flex gap-2">✅ VIP direct routing queue (Zero Lag)</li>
-                            <li class="flex gap-2">✅ Dedicated Cloud Environment</li>
+                            <li class="flex gap-2">✅ Unlimited AutoBot Rules</li>
+                            <li class="flex gap-2">✅ Unlimited Contacts & Messaging</li>
+                            <li class="flex gap-2">✅ API & CRM Direct Access</li>
+                            <li class="flex gap-2">✅ VIP Priority Support (Zero Lag)</li>
                         </ul>
                     </div>
                     <button onclick="openLeadModal('Infinite Scale')" class="w-full bg-wa-green text-white py-4 rounded-xl font-bold hover:bg-[#1ebd50] transition shadow-lg">
-                        Activate Infinite Scale
+                        Get Started
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==========================================
-         6. FOOTER
-         ========================================== -->
-    <footer class="bg-slate-900 text-slate-400 py-12 px-6 relative z-10 border-t border-slate-800">
+    <!-- 8. FAQ SECTION (SEO Friendly) -->
+    <section id="faq" class="py-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-black mb-10 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-lg mb-2">Can I try WebDes before paying?</h4>
+                    <p class="text-slate-500 text-sm">Absolutely. We offer a trial period so you can test our auto-reply features and webhook speeds before committing to a paid plan. Just click on "Request Trial".</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-lg mb-2">Do I need coding skills to set this up?</h4>
+                    <p class="text-slate-500 text-sm">Not at all! Our dashboard is designed to be plug-and-play. If you know how to use standard WhatsApp, you can configure our bot in minutes.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-lg mb-2">Is my data secure?</h4>
+                    <p class="text-slate-500 text-sm">Security is our top priority. We use secure cloud routing and webhook payloads to ensure your customer data flows directly to your designated CRM without being stored unencrypted.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6 border-t border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-slate-950 rounded-xl flex items-center justify-center border border-wa-green/30">
                     <span class="font-black text-wa-green">W</span><span class="font-black text-white">D</span>
                 </div>
-                <span class="font-black text-white text-lg">WebDes Serverless</span>
+                <span class="font-black text-white text-lg">WebDes Automation</span>
             </div>
             <div class="text-center md:text-right text-sm space-y-1">
-                <p>Support: <span id="footer-phone" class="text-wa-green font-bold"></span></p>
+                <p>Sales & Support: <span id="footer-phone" class="text-wa-green font-bold"></span></p>
                 <p>Email: <span id="footer-email" class="text-white"></span></p>
-                <p class="text-xs mt-2 text-slate-500">© 2026 WebDes. All rights reserved.</p>
+                <p class="text-xs mt-2 text-slate-500">© 2026 WebDes. Premium WhatsApp SaaS.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ==========================================
-         7. MODALS (LEAD CAPTURE & PAYMENT)
-         ========================================== -->
+    <!-- 10. MODALS (Lead Capture & Payment) -->
     
-    <!-- Dark Overlay -->
     <div id="modal-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
 
-    <!-- Lead Capture Modal -->
+    <!-- Lead / Trial Modal -->
     <div id="lead-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md hidden opacity-0 transition-opacity duration-300 px-4">
         <div class="glass-modal rounded-3xl p-8 relative">
             <button onclick="closeModals()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-xl font-bold">&times;</button>
-            <h3 class="text-2xl font-black mb-2 text-slate-900">Secure Checkout</h3>
+            <h3 class="text-2xl font-black mb-2 text-slate-900" id="modal-title">Get Started</h3>
             <p class="text-sm text-slate-500 mb-6 font-semibold" id="lead-plan-text">Enter details to proceed.</p>
             
             <form id="checkout-form" class="space-y-4">
@@ -254,12 +298,12 @@
                     <input type="tel" id="user-phone" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-wa-green focus:ring-2 focus:ring-wa-green/20">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Email Address</label>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Business Email</label>
                     <input type="email" id="user-email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-wa-green focus:ring-2 focus:ring-wa-green/20">
                 </div>
                 
                 <button type="submit" id="submit-btn" class="w-full bg-wa-green text-white py-4 rounded-xl font-black hover:bg-[#1ebd50] transition mt-2 shadow-lg flex justify-center items-center gap-2">
-                    Proceed to Payment
+                    Submit Request
                 </button>
             </form>
         </div>
@@ -273,47 +317,49 @@
             <p class="text-xs text-wa-dark bg-wa-light py-1 px-3 rounded-full inline-block font-bold mb-6" id="payment-amount-badge">Total: ₹0</p>
             
             <div class="bg-white p-4 rounded-2xl shadow-inner border border-slate-100 inline-block mb-6 relative">
-                <!-- Laser Scan effect -->
                 <div class="absolute top-0 left-0 w-full h-1 bg-wa-green shadow-[0_0_15px_#25D366] animate-[ping_2s_ease-in-out_infinite]"></div>
-                <!-- Your actual QR Image pulls from config -->
                 <img id="payment-qr-img" src="" alt="UPI QR" class="w-48 h-48 object-contain">
             </div>
             
             <div class="text-xs font-mono bg-slate-900 text-white p-3 rounded-xl">
                 UPI ID: <span id="payment-upi-text" class="text-wa-green font-bold"></span>
             </div>
-            <p class="text-[10px] text-slate-400 mt-4">Node sync activates automatically upon successful transaction.</p>
+            <p class="text-[10px] text-slate-400 mt-4">Once paid, your account will be activated by our team.</p>
         </div>
     </div>
 
-    <!-- ==========================================
-         8. LOGIC & ANIMAL JAVASCRIPT
-         ========================================== -->
+    <!-- 11. JAVASCRIPT LOGIC -->
     <script>
-        // --- 1. Populate Config Data ---
+        // Populate Config Data
         document.getElementById('footer-phone').innerText = CONFIG.phone;
         document.getElementById('footer-email').innerText = CONFIG.email;
         document.getElementById('payment-qr-img').src = CONFIG.qr_image;
         document.getElementById('payment-upi-text').innerText = CONFIG.upi_id;
 
-        // --- 2. Modal Logic ---
+        // Modal Logic
         const overlay = document.getElementById('modal-overlay');
         const leadModal = document.getElementById('lead-modal');
         const paymentModal = document.getElementById('payment-modal');
         const form = document.getElementById('checkout-form');
         let currentAmount = "0";
 
-        function openLeadModal(planName) {
-            document.getElementById('selected-plan').value = planName;
-            document.getElementById('lead-plan-text').innerText = `Selected: ${planName}`;
+        function openLeadModal(intent) {
+            document.getElementById('selected-plan').value = intent;
+            document.getElementById('lead-plan-text').innerText = `Request: ${intent}`;
             
-            if(planName === 'Pro Scale') currentAmount = CONFIG.pricing.pro.price;
-            else if(planName === 'Infinite Scale') currentAmount = CONFIG.pricing.infinite.price;
-            else currentAmount = "Custom";
+            if(intent === 'Pro Scale') {
+                currentAmount = CONFIG.pricing.pro.price;
+                document.getElementById('submit-btn').innerText = "Proceed to Payment";
+            } else if(intent === 'Infinite Scale') {
+                currentAmount = CONFIG.pricing.infinite.price;
+                document.getElementById('submit-btn').innerText = "Proceed to Payment";
+            } else {
+                currentAmount = "Trial/Demo";
+                document.getElementById('submit-btn').innerText = "Submit Request";
+            }
 
             overlay.classList.remove('hidden');
             leadModal.classList.remove('hidden');
-            // small delay for transition
             setTimeout(() => {
                 overlay.classList.remove('opacity-0');
                 leadModal.classList.remove('opacity-0');
@@ -335,109 +381,94 @@
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
 
-        // --- 3. Form Submission (Send to Render -> Show Payment) ---
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
             const originalText = btn.innerHTML;
-            btn.innerHTML = "Syncing Node...";
+            btn.innerHTML = "Processing...";
             btn.disabled = true;
 
             const payload = {
                 name: document.getElementById('user-name').value,
                 phone: document.getElementById('user-phone').value,
                 email: document.getElementById('user-email').value,
-                plan: document.getElementById('selected-plan').value
+                request_type: document.getElementById('selected-plan').value
             };
 
             try {
-                // Send data to Render Webhook
                 if(CONFIG.render_webhook_url && CONFIG.render_webhook_url !== "YOUR_RENDER_URL_HERE") {
                     await fetch(CONFIG.render_webhook_url, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(payload)
-                    }).catch(err => console.log("Webhook error, but proceeding to checkout.", err));
+                    }).catch(err => console.log("Webhook skipped for demo.", err));
                 }
 
-                // Hide Lead Modal
                 leadModal.classList.add('opacity-0');
                 setTimeout(() => { leadModal.classList.add('hidden'); }, 300);
 
-                // Smart Payment Logic
-                if (isMobile() && currentAmount !== "Custom") {
-                    // Open UPI Intent directly on phones
-                    window.location.href = `upi://pay?pa=${CONFIG.upi_id}&pn=WebDes&am=${currentAmount}&cu=INR`;
-                    closeModals();
+                // Show payment ONLY if they selected a paid plan
+                if(currentAmount !== "Trial/Demo") {
+                    if (isMobile()) {
+                        window.location.href = `upi://pay?pa=${CONFIG.upi_id}&pn=WebDes&am=${currentAmount}&cu=INR`;
+                        closeModals();
+                    } else {
+                        document.getElementById('payment-amount-badge').innerText = `Total: ₹${currentAmount}`;
+                        paymentModal.classList.remove('hidden');
+                        setTimeout(() => { paymentModal.classList.remove('opacity-0'); }, 10);
+                    }
                 } else {
-                    // Show QR Code Modal on Desktop
-                    document.getElementById('payment-amount-badge').innerText = `Total: ₹${currentAmount}`;
-                    paymentModal.classList.remove('hidden');
-                    setTimeout(() => { paymentModal.classList.remove('opacity-0'); }, 10);
+                    // Show a success alert for Trial/Demo
+                    setTimeout(() => {
+                        alert("Thank you! Your request has been received. Our team will contact you shortly.");
+                        closeModals();
+                    }, 300);
                 }
 
             } catch (error) {
-                alert("Something went wrong. Please try again.");
+                alert("Error submitting request.");
             } finally {
                 btn.innerHTML = originalText;
                 btn.disabled = false;
             }
         });
 
-        // --- 4. "Wild Tech" Animal Touch Sensor Logic ---
+        // Animal Dodge Logic
         const mouse = { x: 0, y: 0 };
         document.addEventListener('mousemove', (e) => {
             mouse.x = e.clientX;
-            mouse.y = e.clientY + window.scrollY; // adjust for scroll
+            mouse.y = e.clientY + window.scrollY; 
         });
 
-        // Function to make animals dodge the cursor
         function applyDodgeLogic(elementId, distanceThreshold, moveForce) {
             const el = document.getElementById(elementId);
             if(!el) return;
-
-            let currentX = 0;
-            let currentY = 0;
-
+            let currentX = 0, currentY = 0;
             function animate() {
                 const rect = el.getBoundingClientRect();
                 const elX = rect.left + rect.width / 2;
                 const elY = rect.top + window.scrollY + rect.height / 2;
-
                 const dx = mouse.x - elX;
                 const dy = mouse.y - elY;
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
-                // If mouse gets too close, dodge!
                 if (distance < distanceThreshold) {
                     const angle = Math.atan2(dy, dx);
-                    // Push away in opposite direction
-                    const targetX = -Math.cos(angle) * moveForce;
-                    const targetY = -Math.sin(angle) * moveForce;
-                    
-                    // Lerp for smoothness
-                    currentX += (targetX - currentX) * 0.1;
-                    currentY += (targetY - currentY) * 0.1;
+                    currentX += (-Math.cos(angle) * moveForce - currentX) * 0.1;
+                    currentY += (-Math.sin(angle) * moveForce - currentY) * 0.1;
                 } else {
-                    // Return to original position slowly
                     currentX += (0 - currentX) * 0.02;
                     currentY += (0 - currentY) * 0.02;
                 }
-
-                // Apply transform via hardware acceleration
                 el.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
                 requestAnimationFrame(animate);
             }
             animate();
         }
 
-        // Initialize dodges
-        // Eagle: fast and sensitive
-        applyDodgeLogic('eagle-container', 150, 80); 
-        // Tiger: heavy and slower
-        applyDodgeLogic('tiger-container', 200, 40); 
-        // Elephant stays in background, doesn't need aggressive dodge
-        
+        applyDodgeLogic('eagle-container', 150, 60); 
+        applyDodgeLogic('owl-container', 120, 40); 
+        applyDodgeLogic('tiger-container', 200, 50); 
     </script>
 </body>
 </html>
