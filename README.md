@@ -1,6 +1,6 @@
 # 🚀 WebDes: Intelligent WhatsApp Automation Suite
 
-![WebDes Banner](https://via.placeholder.com/1200x300/0f172a/25D366?text=WebDes+Automation+Engine)
+![WebDes Banner](https://orbitwebtools.github.io/webdes/))
 
 ## 📌 Overview
 **WebDes** is a premium, high-conversion WhatsApp Automation and CRM syncing platform built for agencies, real estate brokers, and modern businesses. It eliminates manual follow-ups by deploying zero-latency auto-responders, capturing lead data instantly, and pushing payloads directly to secure cloud webhook nodes.
