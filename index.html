@@ -429,7 +429,7 @@
             };
 
             try {
-                if(CONFIG.render_webhook_url && CONFIG.render_webhook_url !== "YOUR_RENDER_URL_HERE") {
+                if(CONFIG.render_webhook_url && CONFIG.render_webhook_url !== "https://webdes-webhook.onrender.com/webhook") {
                     await fetch(CONFIG.render_webhook_url, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
