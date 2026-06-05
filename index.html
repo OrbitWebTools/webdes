@@ -65,7 +65,7 @@
             email: "contact.webdesai@gmail.com",
             upi_id: "6291192742@kotakbank",
             qr_image: "./qr-code.png", 
-            render_webhook_url: "YOUR_RENDER_URL_HERE", 
+            render_webhook_url: "https://webdes-webhook.onrender.com/webhook",
             pricing: {
                 pro: { name: "Pro Scale", price: "4100" },
                 infinite: { name: "Infinite Scale", price: "12500" }
@@ -162,7 +162,7 @@
         </div>
     </section>
 
-    <!-- 6. NEW: USE CASES / INDUSTRIES (FOR SEO) -->
+    <!-- 6. USE CASES / INDUSTRIES -->
     <section id="use-cases" class="py-20 px-6">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
@@ -414,57 +414,67 @@
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
 
+        // ─── FIXED: sendWebhook as separate reliable function ───────────────
+        async function sendWebhook(payload) {
+            try {
+                const response = await fetch(CONFIG.render_webhook_url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                console.log('Webhook sent. Status:', response.status);
+                return true;
+            } catch (err) {
+                // Network error or server down — log but don't break user flow
+                console.warn('Webhook failed (server may be waking up):', err.message);
+                return false;
+            }
+        }
+
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
             const originalText = btn.innerHTML;
-            btn.innerHTML = "Processing...";
+            btn.innerHTML = `<svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg> Processing...`;
             btn.disabled = true;
 
             const payload = {
-                name: document.getElementById('user-name').value,
-                phone: document.getElementById('user-phone').value,
-                email: document.getElementById('user-email').value,
+                name: document.getElementById('user-name').value.trim(),
+                phone: document.getElementById('user-phone').value.trim(),
+                email: document.getElementById('user-email').value.trim(),
                 request_type: document.getElementById('selected-plan').value
             };
 
-            try {
-                if(CONFIG.render_webhook_url && CONFIG.render_webhook_url !== "https://webdes-webhook.onrender.com/webhook") {
-                    await fetch(CONFIG.render_webhook_url, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    }).catch(err => console.log("Webhook skipped for demo.", err));
-                }
+            // ─── FIXED: Always send webhook, no wrong condition ──────────────
+            await sendWebhook(payload);
 
-                leadModal.classList.add('opacity-0');
-                setTimeout(() => { leadModal.classList.add('hidden'); }, 300);
+            // Hide lead modal
+            leadModal.classList.add('opacity-0');
+            setTimeout(() => { leadModal.classList.add('hidden'); }, 300);
 
-                if(currentAmount !== "Trial/Demo") {
-                    if (isMobile()) {
-                        window.location.href = `upi://pay?pa=${CONFIG.upi_id}&pn=WebDes&am=${currentAmount}&cu=INR`;
-                        closeModals();
-                    } else {
-                        document.getElementById('payment-amount-badge').innerText = `Total: ₹${currentAmount}`;
-                        paymentModal.classList.remove('hidden');
-                        setTimeout(() => { paymentModal.classList.remove('opacity-0'); }, 10);
-                    }
+            // ─── Show payment or success ─────────────────────────────────────
+            if (currentAmount !== "Trial/Demo") {
+                if (isMobile()) {
+                    window.location.href = `upi://pay?pa=${CONFIG.upi_id}&pn=WebDes&am=${currentAmount}&cu=INR`;
                 } else {
-                    setTimeout(() => {
-                        alert("Thank you! Your request has been received. Our team will contact you shortly.");
-                        closeModals();
-                    }, 300);
+                    document.getElementById('payment-amount-badge').innerText = `Total: ₹${currentAmount}`;
+                    paymentModal.classList.remove('hidden');
+                    setTimeout(() => { paymentModal.classList.remove('opacity-0'); }, 10);
                 }
-
-            } catch (error) {
-                alert("Error submitting request.");
-            } finally {
-                btn.innerHTML = originalText;
-                btn.disabled = false;
+            } else {
+                setTimeout(() => {
+                    alert("✅ Thank you! Your request has been received.\nOur team will contact you on WhatsApp shortly.");
+                    closeModals();
+                    // Reset form
+                    form.reset();
+                }, 300);
             }
+
+            btn.innerHTML = originalText;
+            btn.disabled = false;
         });
 
-        // Animal Dodge Logic
+        // ─── Animal Dodge Logic ──────────────────────────────────────────────
         const mouse = { x: 0, y: 0 };
         document.addEventListener('mousemove', (e) => {
             mouse.x = e.clientX;
